@@ -1,0 +1,3 @@
+interface:
+  display_name: "Install Skills"
+  short_description: "统一初始化：安装/升级本套 skills"
