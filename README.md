@@ -22,7 +22,7 @@
 | `flow-hard-bug` | 疑难 Bug、间歇问题或性能回归 | `diagnosing-bugs → implement 收尾` |
 | `flow-large-effort` | 路线尚不清晰的超大型工作 | `wayfinder → to-spec → to-tickets → implement × N` |
 
-详细说明见 [`skills/flows/`](./skills/flows/)。
+详细说明见 [`engineering-skills/`](./engineering-skills/)。
 
 ### 2. 自由组合的小模块
 
@@ -76,7 +76,7 @@
 git clone --depth 1 https://github.com/asherzj/agent-engineering-skills.git
 ```
 
-方式二（手动）：把 `skills/flows/`、`skills/engineering/`、`skills/productivity/grilling/` 和 `skills/install-skills/` 下的 Skill 目录复制到当前 Agent 的用户级 Skill 目录，新开会话后生效。
+方式二（手动）：把 `engineering-skills/` 下直接包含 `SKILL.md` 的每个一级子目录复制到当前 Agent 的用户级 Skill 目录，新开会话后生效。`engineering-skills/` 自身只是 Skill 集合根目录，不作为一个 Skill 安装。
 
 `wayfinder`、`triage`、`to-spec` 和 `to-tickets` 依赖仓库级配置。在具体项目里首次使用前，先运行一次 `setup-engineering-skills`。
 

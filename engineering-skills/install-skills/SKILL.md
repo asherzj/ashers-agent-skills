@@ -21,14 +21,9 @@ disable-model-invocation: true
 
 ## 3. 安装范围
 
-安装以下目录中的每个 Skill 文件夹：
+扫描 `engineering-skills/` 的一级子目录，只安装其中直接包含 `SKILL.md` 的目录。这里应当得到 25 个 Skill：5 个封装流程、18 个工程模块、`grilling` 访谈原语和 `install-skills` 安装入口。
 
-- `skills/flows/`：5 个封装流程；
-- `skills/engineering/`：18 个工程模块；
-- `skills/productivity/grilling/`：多个模块共用的访谈原语；
-- `skills/install-skills/`：本安装入口自身。
-
-合计应安装 25 个 Skill。目录中的说明性 `README.md` 不作为 Skill 安装。
+`engineering-skills/` 自身是集合根目录，不作为 Skill 安装；说明性 `README.md` 同样不安装。不要递归猜测更深层级，因为本仓库约定每个 Skill 都必须直接位于这一层。
 
 关键依赖关系：
 
