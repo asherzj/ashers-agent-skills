@@ -1,3 +1,3 @@
 interface:
-  display_name: "Install Skills"
-  short_description: "统一初始化：安装/升级本套 skills"
+  display_name: "安装研发 Skill"
+  short_description: "统一安装或升级全部中文研发流程与自由组合模块并验证依赖完整"

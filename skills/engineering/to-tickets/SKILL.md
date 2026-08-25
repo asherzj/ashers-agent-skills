@@ -4,11 +4,11 @@ description: 把一份计划、spec 或当前对话拆解为一组曳光弹（tr
 disable-model-invocation: true
 ---
 
-# To Tickets
+# 拆分交付工单
 
 把一份计划、spec（规格说明）或对话拆成一组**工单（ticket）**：曳光弹（tracer-bullet）式的垂直切片（vertical slice），每张都声明**阻塞**它的那些工单。
 
-工单系统（issue tracker）和分诊（triage）标签词汇本应已经提供给你。如果没有，请让用户运行 `/setup-matt-pocock-skills`。
+工单系统（issue tracker）和分诊（triage）标签词汇本应已经提供给你。如果没有，请让用户运行 `/setup-engineering-skills`。
 
 ## 流程
 
@@ -57,7 +57,7 @@ disable-model-invocation: true
 
 ### 5. 把工单发布到已配置的工单系统
 
-发布已认可的工单。**怎么发**取决于 `/setup-matt-pocock-skills` 配置的是哪种工单系统；两种方式下工单本身并无差别，变的只是阻塞边的形态：
+发布已认可的工单。**怎么发**取决于 `/setup-engineering-skills` 配置的是哪种工单系统；两种方式下工单本身并无差别，变的只是阻塞边的形态：
 
 - **本地文件** → 在 `.scratch/<feature-slug>/issues/<NN>-<slug>.md` 路径下每张工单写一个文件，按依赖顺序（阻塞者在前）从 `01` 开始编号。每个文件的"阻塞于"列出它依赖的工单编号/标题。使用下面的单工单文件模板：一张工单一个文件，绝不写成一个合并的大文件。
 - **真实工单系统（GitHub、Linear、…）** → 按依赖顺序（阻塞者在前）每张工单发布一个 issue，让每张工单的阻塞边能引用真实标识符。平台若有原生的阻塞 / 子 issue 关系就用它；否则把每张工单的"阻塞于"设为阻塞它的那些 issue。除非另有指示，打上 `ready-for-agent` 分诊标签；这些工单在构造上就是 agent 可直接认领的。

@@ -1,32 +1,33 @@
-# Engineering
+# 自由组合的工程模块
 
-Skills I use daily for code work.
+本目录提供可以单独调用、也可以被 `skills/flows/` 编排的研发小模块。完整交付优先使用封装流程；只需要某个阶段时再直接调用这里的模块。
 
-## User-invoked
+## 用户显式调用
 
-Reachable only when you type them (Claude Code: `disable-model-invocation: true`; Codex: `policy.allow_implicit_invocation: false` in `agents/openai.yaml`).
+这些模块默认需要用户明确点名调用。
 
-- **[ask-matt](./ask-matt/SKILL.md)**: Ask which skill or flow fits your situation. A router over the user-invoked skills in this repo.
-- **[grill-with-docs](./grill-with-docs/SKILL.md)**: Grilling session that also builds your project's domain model, sharpening terminology and updating `CONTEXT.md` and ADRs inline.
-- **[triage](./triage/SKILL.md)**: Move issues through a state machine of triage roles.
-- **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)**: Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
-- **[setup-matt-pocock-skills](./setup-matt-pocock-skills/SKILL.md)**: Configure this repo for the engineering skills (issue tracker, triage labels, domain doc layout). Run once per repo.
-- **[to-spec](./to-spec/SKILL.md)**: Turn the current conversation into a spec and publish it to the issue tracker.
-- **[to-tickets](./to-tickets/SKILL.md)**: Break any plan, spec, or conversation into a set of tracer-bullet tickets, each declaring its blocking edges, whether as text in a local file or as native blocking links on a real tracker.
-- **[implement](./implement/SKILL.md)**: Build the work described by a spec or set of tickets, driving `/tdd` at pre-agreed seams and closing out with `/code-review` before committing.
-- **[wayfinder](./wayfinder/SKILL.md)**: Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on the issue tracker, resolved one at a time until the way to the destination is clear.
+- **[ask-anything-about-engineering-skills](./ask-anything-about-engineering-skills/SKILL.md)**：根据研发处境选择封装流程或自由组合模块。
+- **[grill-with-docs](./grill-with-docs/SKILL.md)**：逐轮澄清方案并同步维护领域文档与 ADR。
+- **[triage](./triage/SKILL.md)**：按规范角色状态机流转外部 Issue 和 PR。
+- **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)**：扫描代码库中的架构深化机会并逐项澄清。
+- **[setup-engineering-skills](./setup-engineering-skills/SKILL.md)**：为仓库配置工单系统、分诊标签和领域文档布局。
+- **[to-spec](./to-spec/SKILL.md)**：把当前对话综合成规格并发布到工单系统。
+- **[to-tickets](./to-tickets/SKILL.md)**：把计划或规格拆成带阻塞边的纵向交付工单。
+- **[implement](./implement/SKILL.md)**：按一张规格或工单完成实现、验证、评审、提交与推送。
+- **[wayfinder](./wayfinder/SKILL.md)**：用共享决策地图规划超出一次会话容量的大型工作。
 
-## Model-invoked
+## 模型按需调用
 
-Model- or user-reachable (rich trigger phrasing so the model can reach for them).
+这些模块既可以由用户点名，也可以由模型根据明确场景自动选择。
 
-- **[prototype](./prototype/SKILL.md)**: Build a throwaway prototype to answer a design question: a single shareable HTML file for state/logic, or several toggleable UI variations.
+- **[prototype](./prototype/SKILL.md)**：制作一次性逻辑或 UI 原型，回答一个具体设计问题。
+- **[diagnosing-bugs](./diagnosing-bugs/SKILL.md)**：为疑难 Bug 与性能回归建立反馈回路，最小化、定位、修复并补回归覆盖。
+- **[research](./research/SKILL.md)**：针对高可信一手来源调研，并在仓库中留下带引用结果。
+- **[tdd](./tdd/SKILL.md)**：通过红—绿纵向切片实现或修复一个行为。
+- **[domain-modeling](./domain-modeling/SKILL.md)**：打磨领域模型、`CONTEXT.md` 与 ADR。
+- **[codebase-design](./codebase-design/SKILL.md)**：使用深模块、接口、接缝和局部性设计模块边界。
+- **[code-review](./code-review/SKILL.md)**：从代码规范与规格忠实度两个维度评审指定差异。
+- **[resolving-merge-conflicts](./resolving-merge-conflicts/SKILL.md)**：依据双方变更意图逐块解决合并或变基冲突。
+- **[wizard](./wizard/SKILL.md)**：为只有人类能完成的第三方配置或切换步骤生成交互向导。
 
-- **[diagnosing-bugs](./diagnosing-bugs/SKILL.md)**: Disciplined diagnosis loop for hard bugs and performance regressions: build a feedback loop that goes red on this bug → minimise → hypothesise → instrument → fix → regression-test.
-- **[research](./research/SKILL.md)**: Investigate a question against high-trust primary sources and capture the findings as a cited Markdown file in the repo, run as a background agent.
-- **[tdd](./tdd/SKILL.md)**: Test-driven development with a red-green-refactor loop. Builds features or fixes bugs one vertical slice at a time.
-- **[domain-modeling](./domain-modeling/SKILL.md)**: Actively build and sharpen a project's domain model by challenging terms, stress-testing with scenarios, and updating `CONTEXT.md` and ADRs inline.
-- **[codebase-design](./codebase-design/SKILL.md)**: Shared discipline and vocabulary for designing deep modules: small interfaces, clean seams, testable through the interface.
-- **[code-review](./code-review/SKILL.md)**: Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/spec?), run as parallel sub-agents.
-- **[resolving-merge-conflicts](./resolving-merge-conflicts/SKILL.md)**: Work through an in-progress git merge or rebase conflict hunk by hunk, resolving by intent traced to each side's primary source, then finish the operation, never `--abort`.
-- **[wizard](./wizard/SKILL.md)**: Generate an interactive bash wizard that walks a human through steps only they can perform: provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover.
+访谈原语 `grilling` 位于 `skills/productivity/grilling/`，供多个工程模块复用。

@@ -1,3 +1,3 @@
 interface:
-  display_name: "Research"
-  short_description: "Research from high-trust sources"
+  display_name: "高可信来源调研"
+  short_description: "基于高可信一手来源调研问题并在仓库中沉淀带引用结论"

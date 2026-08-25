@@ -1,73 +1,92 @@
-# Matt Pocock Engineering Skills 中文版
+# Agent Engineering Skills
 
-一套面向 coding agent 的研发流程 skills（拷问式规划、spec/工单拆分、TDD、代码评审、分诊等）的**中文翻译版本**。
+一套面向 Coding Agent 的中文研发 Skill 集合。它把需求澄清、原型、规格、工单拆分、TDD、代码评审、Issue 分诊、疑难问题诊断和大型工作寻路组织成可复用的流程与模块。
 
-> **本项目演化自 [mattpocock/skills](https://github.com/mattpocock/skills)**，由 Matt Pocock 创作（MIT 许可证）。
-> 在原仓库 `skills/engineering/` 全部 18 个 skill 及其依赖 `skills/productivity/grilling` 的基础上翻译为中文，
-> 并新增统一初始化入口 `install-skills`。翻译内容与原文如有出入，以[原仓库](https://github.com/mattpocock/skills)为准。
+> 本项目 fork 自 [mattpocock/skills](https://github.com/mattpocock/skills)，最初从其工程 Skill 的中文翻译起步。
+> 目前已脱离上游同步节奏，围绕中文研发场景、端到端流程编排、仓库适配和 Coding Agent 协作方式独立演化。
+> 原始作品及许可证归属见 [LICENSE](./LICENSE)；本项目后续修改继续遵循 MIT 许可证。
 
-## Skills 一览（19 + 1）
+## 两种使用方式
 
-### 用户调用（user-invoked）
+用户可直接选择完整交付流程，也可以像积木一样自由组合小模块。不确定怎么选时，调用 `ask-anything-about-engineering-skills`。
 
-| Skill | 说明 |
-|---|---|
-| `ask-matt` | 路由器：不知道该用哪个 skill 时问它 |
-| `grill-with-docs` | 拷问式打磨方案，同时沉淀领域文档（ADR + 术语表） |
-| `triage` | 按 分诊（triage）角色状态机流转 issue 和外部 PR |
-| `improve-codebase-architecture` | 扫描代码库寻找「深化」机会，生成可视化 HTML 报告，逐项拷问 |
-| `setup-matt-pocock-skills` | 仓库级一次性配置：工单系统（issue tracker）、分诊标签、领域文档布局 |
-| `to-spec` | 把当前对话沉淀成 spec（规格说明）并发布到工单系统 |
-| `to-tickets` | 把计划/spec 拆成带阻塞关系的 曳光弹（tracer-bullet）工单 |
-| `implement` | 按 spec/工单实现：在预定 接缝（seam）处驱动 TDD，提交前跑 code-review |
-| `wayfinder` | 把超大块工作规划成工单系统上的 共享地图（决策工单逐个击破） |
+### 1. 封装好的流程
 
-### 模型调用（model-invoked）
+这些流程负责阶段编排、门禁和上下文交接，适合直接从一个研发目标开始。
 
-| Skill | 说明 |
-|---|---|
-| `prototype` | 造一个一次性原型回答设计问题（逻辑原型 / UI 变体） |
-| `diagnosing-bugs` | 疑难 bug 与性能回归的 诊断循环（diagnosis loop） |
-| `research` | 对高可信源做调研并沉淀为带引用的 Markdown |
-| `tdd` | 测试驱动开发：红-绿-重构循环 |
-| `domain-modeling` | 主动构建和打磨领域模型（CONTEXT.md / ADR） |
-| `codebase-design` | 深模块（deep module）设计词汇与原则 |
-| `code-review` | 双轴代码评审：Standards（规范）+ Spec（忠实实现） |
-| `resolving-merge-conflicts` | 按意图逐 差异块（hunk）解决合并/变基冲突 |
-| `wizard` | 生成引导人类执行手工步骤的 bash 向导 |
-| `grilling` | 拷问核心：逐轮追问直到达成共识（多个 skill 的依赖） |
+| Skill | 适用场景 | 主要路径 |
+|---|---|---|
+| `flow-feature` | 需要规格和多张工单的新需求 | `grill-with-docs → [prototype] → to-spec → to-tickets → implement × N` |
+| `flow-small-change` | 一次上下文能完成的小改动 | `grill-with-docs → implement` |
+| `flow-incoming-issue` | 外部提交的 Issue 或 PR | `triage → ready-for-agent 门禁 → implement` |
+| `flow-hard-bug` | 疑难 Bug、间歇问题或性能回归 | `diagnosing-bugs → implement 收尾` |
+| `flow-large-effort` | 路线尚不清晰的超大型工作 | `wayfinder → to-spec → to-tickets → implement × N` |
 
-### 本仓库新增
+详细说明见 [`skills/flows/`](./skills/flows/)。
+
+### 2. 自由组合的小模块
+
+只需要某个阶段，或已有自己的流程时，可以直接调用这些模块。
+
+#### 入口与仓库配置
 
 | Skill | 说明 |
 |---|---|
-| `install-skills` | **统一初始化入口**：把本仓库全部 skills 安装/升级到当前 agent 的用户级 skill 目录 |
+| `ask-anything-about-engineering-skills` | 在封装流程和自由组合模块之间选择正确入口 |
+| `setup-engineering-skills` | 为具体仓库配置工单系统、分诊标签与领域文档布局 |
+| `install-skills` | 把本仓库全部 Skill 安装或升级到用户级 Skill 目录 |
+
+#### 澄清与规划
+
+| Skill | 说明 |
+|---|---|
+| `grill-with-docs` | 逐轮澄清方案，同时维护 `CONTEXT.md` 与 ADR |
+| `prototype` | 用一次性逻辑或 UI 原型回答一个具体设计问题 |
+| `to-spec` | 把当前上下文综合成规格并发布到工单系统 |
+| `to-tickets` | 把规格拆成带阻塞边的纵向交付工单 |
+| `wayfinder` | 把超大型模糊工作规划成共享决策地图 |
+
+#### 实现与质量
+
+| Skill | 说明 |
+|---|---|
+| `implement` | 按一张规格或工单完成实现、验证、评审、提交与推送 |
+| `tdd` | 以红—绿纵向切片驱动行为实现 |
+| `code-review` | 从代码规范与规格忠实度两个维度评审差异 |
+| `diagnosing-bugs` | 先建立能捕获具体故障的反馈回路，再定位并修复 |
+| `resolving-merge-conflicts` | 按双方变更意图逐块解决合并或变基冲突 |
+
+#### 工单、知识与架构
+
+| Skill | 说明 |
+|---|---|
+| `triage` | 按规范状态机分诊外部 Issue 和 PR |
+| `research` | 针对高可信一手来源调研并沉淀带引用结论 |
+| `domain-modeling` | 打磨领域术语并维护上下文文档与 ADR |
+| `codebase-design` | 使用深模块、接口、接缝和局部性设计模块边界 |
+| `improve-codebase-architecture` | 扫描代码库并发现值得深化的架构机会 |
+| `wizard` | 为只有人类能完成的第三方配置或切换步骤生成交互向导 |
+| `grilling` | 单独使用逐轮访谈原语，不附带仓库文档包装 |
 
 ## 安装
 
-方式一（推荐）：让 agent 克隆本仓库后调用 `install-skills` skill，它会探测当前 agent 的用户级
-skill 目录并完成安装与验证：
+方式一（推荐）：让 Agent 克隆仓库后调用 `install-skills`，由它探测当前 Agent 的用户级 Skill 目录并完成安装与验证。
 
 ```bash
-git clone --depth 1 https://github.com/asherzj/matt-pocock-skills-zh.git
+git clone --depth 1 https://github.com/asherzj/agent-engineering-skills.git
 ```
 
-方式二（手动）：把 `skills/engineering/` 下各目录、`skills/productivity/grilling/`、
-`skills/install-skills/` 复制到你所用 agent 的用户级 skill 目录（如 Claude Code 为
-`~/.claude/skills`），新开会话后生效。
+方式二（手动）：把 `skills/flows/`、`skills/engineering/`、`skills/productivity/grilling/` 和 `skills/install-skills/` 下的 Skill 目录复制到当前 Agent 的用户级 Skill 目录，新开会话后生效。
 
-> 提示：`wayfinder` / `triage` / `to-spec` / `to-tickets` 依赖仓库级配置，
-> 在具体项目里首次使用前先运行一次 `setup-matt-pocock-skills`。
+`wayfinder`、`triage`、`to-spec` 和 `to-tickets` 依赖仓库级配置。在具体项目里首次使用前，先运行一次 `setup-engineering-skills`。
 
-## 翻译约定
+## 中文约定
 
-- `name`、skill 名、命令、文件名（SKILL.md、CONTEXT.md、ADR 等）、路径、标签字符串
-  （`needs-triage` 等）保留英文，保证互引用和触发词不被破坏
-- 概念术语首次出现采用「中文（English）」形式，如 拷问（grilling）、接缝（seam）、
-  曳光弹（tracer-bullet）、工单系统（issue tracker）
-- frontmatter 中 `description` 译为中文，其余键值原样保留
-- 代码块、ASCII 图、模板占位符整体不动
+- Skill 的说明、正文、界面名称与用户提示保持中文。
+- `name`、Skill 标识符、命令、文件名、路径和标签字符串保留稳定的英文形式，避免破坏互引用和自动触发。
+- 必须保留的协议字段、代码、命令和模板键不做强行翻译。
+- 新增或修改 Skill 时，同步更新 `agents/openai.yaml` 中的中文界面信息。
 
-## 许可证
+## 许可证与来源
 
-[MIT](./LICENSE)，版权归 Matt Pocock 所有。本仓库为翻译演化版本，遵循同一许可证。
+[MIT](./LICENSE)。本仓库保留上游项目的版权与许可证声明；在此基础上的中文化、流程编排和后续功能由本仓库独立维护与演化。

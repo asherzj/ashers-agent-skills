@@ -1,0 +1,6 @@
+interface:
+  display_name: "小改动交付流程"
+  short_description: "在一个连续上下文中澄清范围并完成小改动实现、验证与交付收尾"
+  default_prompt: "使用 $flow-small-change 澄清并完整交付这项小改动。"
+policy:
+  allow_implicit_invocation: false

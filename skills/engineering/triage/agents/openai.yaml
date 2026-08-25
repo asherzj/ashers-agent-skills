@@ -1,5 +1,5 @@
 interface:
-  display_name: "Triage"
-  short_description: "Move issues through triage roles"
+  display_name: "Issue 分诊"
+  short_description: "验证外部 Issue 或 PR，并按规范角色状态机推进处理"
 policy:
   allow_implicit_invocation: false

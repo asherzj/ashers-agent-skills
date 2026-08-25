@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 本 skill 接收当前对话的上下文和对代码库的理解，产出一个 spec（规格说明）。不要访谈用户；只综合你已经知道的东西。
 
-工单系统（issue tracker）和分诊标签词汇应当已经提供给你。如果没有，请让用户运行 `/setup-matt-pocock-skills`。
+工单系统（issue tracker）和分诊标签词汇应当已经提供给你。如果没有，请让用户运行 `/setup-engineering-skills`。
 
 ## 流程
 

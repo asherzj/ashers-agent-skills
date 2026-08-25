@@ -1,0 +1,6 @@
+interface:
+  display_name: "外部 Issue 处理流程"
+  short_description: "先分诊外部事项，再按代理就绪状态门禁进入实现与完整交付收尾"
+  default_prompt: "使用 $flow-incoming-issue 分诊这个外部事项，并仅在就绪后实现。"
+policy:
+  allow_implicit_invocation: false

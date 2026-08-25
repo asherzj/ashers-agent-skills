@@ -1,5 +1,5 @@
 interface:
-  display_name: "Grill with Docs"
-  short_description: "Grill a design and write its docs"
+  display_name: "带文档的需求拷问"
+  short_description: "通过逐轮访谈澄清设计并同步沉淀领域文档、架构决策与最终共识"
 policy:
   allow_implicit_invocation: false

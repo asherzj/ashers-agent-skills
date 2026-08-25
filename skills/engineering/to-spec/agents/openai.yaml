@@ -1,5 +1,5 @@
 interface:
-  display_name: "To Spec"
-  short_description: "Turn a conversation into a spec"
+  display_name: "整理并发布规格"
+  short_description: "把当前对话和代码库理解综合成可执行规格并发布到工单系统"
 policy:
   allow_implicit_invocation: false
