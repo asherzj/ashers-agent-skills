@@ -1,5 +1,5 @@
 interface:
-  display_name: "Wayfinder"
-  short_description: "Map a large effort as decision tickets"
+  display_name: "大型工作寻路"
+  short_description: "把迷雾重重的大型工作规划为带依赖关系的共享决策地图"
 policy:
   allow_implicit_invocation: false

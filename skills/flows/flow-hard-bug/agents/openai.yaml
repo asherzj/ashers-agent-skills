@@ -1,0 +1,6 @@
+interface:
+  display_name: "疑难 Bug 交付流程"
+  short_description: "建立可变红反馈回路，完成根因诊断、回归修复与完整交付收尾"
+  default_prompt: "使用 $flow-hard-bug 复现、诊断、修复并交付这个疑难问题。"
+policy:
+  allow_implicit_invocation: false

@@ -1,10 +1,10 @@
 ---
-name: setup-matt-pocock-skills
+name: setup-engineering-skills
 description: 为本仓库配置工程技能：设置其工单系统（issue tracker）、分诊（triage）标签词汇表和领域文档布局。在其他工程技能首次使用之前运行一次。
 disable-model-invocation: true
 ---
 
-# 设置 Matt Pocock 的技能
+# 设置研发 Skill 所需的仓库配置
 
 搭建工程技能所依赖的仓库级配置：
 

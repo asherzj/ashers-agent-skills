@@ -10,7 +10,7 @@ description: "对自某个固定点（commit、branch、tag 或 merge-base）以
 
 两条轴以**并行子代理**运行，互不污染对方的上下文，然后由本 skill 汇总它们的发现。
 
-工单系统（issue tracker）应已提供给你。如果 `docs/agents/issue-tracker.md` 缺失，让用户运行 `/setup-matt-pocock-skills`。
+工单系统（issue tracker）应已提供给你。如果 `docs/agents/issue-tracker.md` 缺失，让用户运行 `/setup-engineering-skills`。
 
 ## 流程
 

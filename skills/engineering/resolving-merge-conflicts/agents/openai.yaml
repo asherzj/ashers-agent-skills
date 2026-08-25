@@ -1,3 +1,3 @@
 interface:
-  display_name: "Resolving Merge Conflicts"
-  short_description: "Resolve merge and rebase conflicts"
+  display_name: "解决合并冲突"
+  short_description: "依据双方变更意图逐块解决合并或变基冲突并完成整个操作"

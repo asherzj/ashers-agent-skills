@@ -1,0 +1,6 @@
+interface:
+  display_name: "新需求交付流程"
+  short_description: "从需求澄清推进到规格、依赖工单、逐项实现与完整交付收尾"
+  default_prompt: "使用 $flow-feature 把这个新需求从澄清推进到可交付工单。"
+policy:
+  allow_implicit_invocation: false

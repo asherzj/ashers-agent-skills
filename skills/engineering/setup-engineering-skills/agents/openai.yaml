@@ -1,0 +1,5 @@
+interface:
+  display_name: "设置研发 Skill"
+  short_description: "为仓库配置工单系统、分诊标签和领域文档，供全部研发流程复用"
+policy:
+  allow_implicit_invocation: false

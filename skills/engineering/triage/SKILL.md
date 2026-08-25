@@ -4,7 +4,7 @@ description: 把 issue 和外部 PR 纳入由分诊（triage）角色组成的�
 disable-model-invocation: true
 ---
 
-# Triage
+# Issue 分诊
 
 把项目工单系统（issue tracker）上的 issue 纳入一个由分诊角色组成的小型状态机中流转。
 
@@ -40,7 +40,7 @@ disable-model-invocation: true
 
 每个经过分诊的 issue 都应恰好携带一个类别角色和一个状态角色。如果状态角色冲突，先标记出来并询问维护者，再做其他任何事情。
 
-这些是规范角色名。工单系统中实际使用的标签字符串可能不同。映射关系本应已经提供给你。如果没有，让用户运行 `/setup-matt-pocock-skills`。
+这些是规范角色名。工单系统中实际使用的标签字符串可能不同。映射关系本应已经提供给你。如果没有，让用户运行 `/setup-engineering-skills`。
 
 状态流转：未打标签的 issue 通常先进入 `needs-triage`；再从那里流转到 `needs-info`、`ready-for-agent`、`ready-for-human` 或 `wontfix`。报告者回复后，`needs-info` 回到 `needs-triage`。维护者可以随时推翻；遇到看起来异常的流转，先标记并询问，再继续。
 
