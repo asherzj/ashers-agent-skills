@@ -78,7 +78,23 @@ git clone --depth 1 https://github.com/asherzj/agent-engineering-skills.git
 
 方式二（手动）：把 `engineering-skills/` 下直接包含 `SKILL.md` 的每个一级子目录复制到当前 Agent 的用户级 Skill 目录，新开会话后生效。`engineering-skills/` 自身只是 Skill 集合根目录，不作为一个 Skill 安装。
 
-`wayfinder`、`triage`、`to-spec` 和 `to-tickets` 依赖仓库级配置。在具体项目里首次使用前，先运行一次 `setup-engineering-skills`。
+## 为项目初始化工程 Skill
+
+安装完成后，在每个具体项目里首次使用这套研发流程前，先进入目标仓库并调用：
+
+```text
+$setup-engineering-skills
+```
+
+`setup-engineering-skills` 会先探索仓库，再与用户确认以下配置：
+
+- Issue 存放在 GitHub、GitLab、本地 Markdown，还是其他工单系统
+- 是否采用默认的五个 Triage 标签
+- 领域文档使用单上下文还是多上下文布局
+
+确认后，它会更新仓库已有的 `AGENTS.md` 或 `CLAUDE.md`，并在 `docs/agents/` 下生成工单系统、Triage 标签和领域文档约定。`wayfinder`、`triage`、`to-spec` 和 `to-tickets` 等 Skill 会读取这些配置。
+
+每个仓库通常只需运行一次。之后可以直接维护 `docs/agents/*.md`；只有更换工单系统或希望重新初始化配置时，才需要再次调用。
 
 ## 中文约定
 
