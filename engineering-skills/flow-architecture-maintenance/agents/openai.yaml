@@ -1,0 +1,6 @@
+interface:
+  display_name: "架构维护交付流程"
+  short_description: "把架构热点推进为可验证迁移并删除旧结构、回收长期上下文"
+  default_prompt: "使用 $flow-architecture-maintenance 完成一次不扩大业务范围的架构维护迭代。"
+policy:
+  allow_implicit_invocation: false

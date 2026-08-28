@@ -1,0 +1,6 @@
+interface:
+  display_name: "项目上下文垃圾回收"
+  short_description: "审计并清理领域、架构和决策文档中的过期、重复与冲突知识"
+  default_prompt: "使用 $context-gc 审计并清理这个仓库的长期项目上下文。"
+policy:
+  allow_implicit_invocation: false

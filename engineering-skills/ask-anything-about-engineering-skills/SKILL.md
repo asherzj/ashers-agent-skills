@@ -12,6 +12,7 @@ disable-model-invocation: true
 
 ### 新需求
 
+- 输入主要是一段口述、会议逐字稿或未经整理的聊天记录 → 先用 `from-transcript`，再按确认后的规模进入下面流程
 - 一项可澄清、需要规格和多张交付工单的新功能 → `flow-feature`
 - 一个局部行为、一次上下文和一次提交即可完成 → `flow-small-change`
 
@@ -22,6 +23,7 @@ disable-model-invocation: true
 - 外部提交的原始 Issue 或 PR → `flow-incoming-issue`
 - 难复现、间歇性、性能回归或第一眼无法定位的问题 → `flow-hard-bug`
 - 路线本身仍不可见、需要跨会话消除决策迷雾的超大型工作 → `flow-large-effort`
+- 已有业务行为不变，需要独立完成模块深化、迁移、删除旧结构和上下文回收 → `flow-architecture-maintenance`
 
 不要把 `to-tickets` 生成的工单送进 `flow-incoming-issue`；它们已经可以直接实现。不要为了普通多工单功能使用 `flow-large-effort`；只有路线尚不清晰时才需要决策地图。
 
@@ -29,6 +31,7 @@ disable-model-invocation: true
 
 ### 澄清与规划
 
+- `from-transcript`：把口述、会议逐字稿或聊天记录编译成经人类确认的研发输入。
 - `grill-with-docs`：在仓库中通过访谈澄清方案，并沉淀 `CONTEXT.md` 与 ADR。
 - `prototype`：用一次性逻辑或 UI 原型回答一个必须运行或亲眼查看的问题。
 - `to-spec`：把当前上下文综合成规格并发布到工单系统。
@@ -50,16 +53,19 @@ disable-model-invocation: true
 - `domain-modeling`：打磨领域术语并记录难以回退的决策。
 - `codebase-design`：用深模块、接口、接缝和局部性设计模块形状。
 - `improve-codebase-architecture`：扫描适合代理长期维护的架构深化机会。
+- `context-gc`：审计并清理领域、架构、决策和代码事实之间的过期、重复与冲突上下文。
+- `flow-architecture-maintenance`：把选定的架构热点推进为规格、迁移工单、实现、删除和上下文回收。
 - `wizard`：生成只有人类能完成的第三方配置或切换步骤向导。
 - `grilling`：只需要访谈原语、不要仓库文档包装时使用。
 
 ## 选择顺序
 
 1. 用户是否明确点名了某个 Skill？点名优先。
-2. 用户是否要求端到端交付？从五个封装流程中选择。
-3. 用户是否只要求某个阶段？直接选择对应模块。
-4. 当前是否已经位于某个流程中间？从现有耐久产物（Issue、规格、决策地图、原型指针）继续，不要从头重复澄清。
-5. 如果仍无法判断，只问一个会改变路线的问题；不要让用户重新描述已经给出的事实。
+2. 原始输入是否仍是一手口述或逐字稿？先用 `from-transcript`，不要直接规格化。
+3. 用户是否要求端到端交付？从六个封装流程中选择。
+4. 用户是否只要求某个阶段？直接选择对应模块。
+5. 当前是否已经位于某个流程中间？从现有耐久产物（输入简报、Issue、规格、决策地图、原型指针）继续，不要从头重复澄清。
+6. 如果仍无法判断，只问一个会改变路线的问题；不要让用户重新描述已经给出的事实。
 
 ## 阶段边界
 
