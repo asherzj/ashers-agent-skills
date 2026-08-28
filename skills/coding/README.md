@@ -1,6 +1,6 @@
-# 中文研发 Skill
+# Coding Skills
 
-本目录采用完全平铺结构：除本说明文件外，每个一级子目录都是一个可独立安装的 Skill。文件系统不再额外区分流程和模块；`flow-` 前缀负责聚类完整流程，下面的目录只负责说明它们在使用方式上的差异。
+本目录收纳编码与软件研发领域的 Skill，并采用平铺结构：除本说明文件外，每个一级子目录都是一个可独立安装的 Skill。分类内不再额外区分流程和模块；`flow-` 前缀负责聚类完整流程，下面的目录只负责说明它们在使用方式上的差异。
 
 ## 封装好的流程
 
@@ -23,7 +23,7 @@
 
 - [`ask-anything-about-engineering-skills`](./ask-anything-about-engineering-skills/SKILL.md)：选择封装流程或自由组合模块。
 - [`setup-engineering-skills`](./setup-engineering-skills/SKILL.md)：配置工单系统、分诊标签和领域文档布局。
-- [`install-skills`](./install-skills/SKILL.md)：安装或升级本目录下的全部 Skill。
+- [`install-skills`](./install-skills/SKILL.md)：安装或升级本仓库全部分类中的 Skill。
 
 ### 澄清与规划
 

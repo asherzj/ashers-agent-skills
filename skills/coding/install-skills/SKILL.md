@@ -1,10 +1,10 @@
 ---
 name: install-skills
-description: 统一安装或升级本仓库的全部中文研发 Skill，包括封装流程和自由组合模块，使它们在当前 Coding Agent 的所有项目中可用。首次安装或升级时运行。
+description: 统一安装或升级本仓库全部分类中的中文 Skill，使它们在当前 Coding Agent 的所有项目中可用。首次安装或升级时运行。
 disable-model-invocation: true
 ---
 
-# 安装或升级整套研发 Skill
+# 安装或升级整套 Skill
 
 把 `https://github.com/asherzj/agent-engineering-skills` 中的全部 Skill 安装到当前 Coding Agent 的用户级 Skill 目录。重复运行即为升级。
 
@@ -21,9 +21,9 @@ disable-model-invocation: true
 
 ## 3. 安装范围
 
-扫描 `engineering-skills/` 的一级子目录，只安装其中直接包含 `SKILL.md` 的目录。这里应当得到 28 个 Skill：6 个封装流程、20 个工程模块、`grilling` 访谈原语和 `install-skills` 安装入口。
+扫描 `skills/` 下约定的分类目录 `coding`、`career-prep` 和 `writing`，再扫描每个分类的一级子目录；只安装直接包含 `SKILL.md` 的目录。当前应当得到 28 个 Skill，全部位于 `coding`：6 个封装流程、20 个工程模块、`grilling` 访谈原语和 `install-skills` 安装入口。
 
-`engineering-skills/` 自身是集合根目录，不作为 Skill 安装；说明性 `README.md` 同样不安装。不要递归猜测更深层级，因为本仓库约定每个 Skill 都必须直接位于这一层。
+`skills/`、三个分类目录和说明性 `README.md` 都不作为 Skill 安装。不要递归猜测更深层级，因为本仓库约定每个 Skill 都必须直接位于分类目录下。
 
 关键依赖关系：
 
@@ -44,7 +44,7 @@ disable-model-invocation: true
 
 ## 4. 验证
 
-- 对比目标目录和上述 25 个 Skill，确认没有遗漏；
+- 对比目标目录和上述 28 个 Skill，确认没有遗漏，并核对分类归属；
 - 检查每个 `SKILL.md` 的 frontmatter，确认 `name` 非空且与目录名一致；
 - 检查 `agents/openai.yaml` 的界面信息保持中文；
 - 检查引用到的 Skill 依赖都已安装；

@@ -1,0 +1,3 @@
+interface:
+  display_name: "安装全部 Skill"
+  short_description: "统一安装或升级全部分类中的中文 Skill，并验证清单和依赖完整性"
