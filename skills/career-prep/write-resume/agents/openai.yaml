@@ -1,0 +1,4 @@
+interface:
+  display_name: "简历写作"
+  short_description: "把经历转化为真实、量化、面试可自证且匹配目标岗位的简历"
+  default_prompt: "使用 $write-resume 帮我撰写或优化简历，提炼决策点、量化证据和可自证的 bullet。"

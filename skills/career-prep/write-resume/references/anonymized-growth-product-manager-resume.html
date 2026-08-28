@@ -1,0 +1,433 @@
+<!doctype html>
+<!-- Fictional, anonymized layout example. Do not reuse its claims or metrics as user facts. -->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>匿名商业化增长产品经理简历样例</title>
+  <style>
+    :root {
+      --blue: #2f80ed;
+      --blue-light: #f3f8ff;
+      --text: #1f2933;
+      --muted: #5c6670;
+      --line: #e6edf5;
+      --page-width: 820px;
+    }
+
+    /*
+      The build pipeline regenerates these per-resume PingFang subsets from the local
+      macOS system font. Exact subsetting prevents Chrome from mapping common ideographs
+      to CJK radical code points in the PDF text layer.
+    */
+    @font-face {
+      font-family: "ResumePingFang";
+      src: url("resume-fonts/PingFangSC-Regular.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+20000-2FA1F, U+FF00-FFEF;
+    }
+
+    @font-face {
+      font-family: "ResumePingFang";
+      src: url("resume-fonts/PingFangSC-Medium.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 500;
+      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+20000-2FA1F, U+FF00-FFEF;
+    }
+
+    @font-face {
+      font-family: "ResumePingFang";
+      src: url("resume-fonts/PingFangSC-Semibold.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 600 900;
+      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+20000-2FA1F, U+FF00-FFEF;
+    }
+
+    /* ResumeArialUnicode remains a late fallback for missing glyphs only. */
+    @font-face {
+      font-family: "ResumeArialUnicode";
+      src: local("Arial Unicode MS"), url("file:///System/Library/Fonts/Supplemental/Arial%20Unicode.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f7fb;
+      color: var(--text);
+      font-family: "ResumePingFang", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "ResumeArialUnicode", "Arial Unicode MS", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.62;
+    }
+
+    .resume {
+      width: var(--page-width);
+      margin: 28px auto;
+      background: #fff;
+      padding: 42px 48px 50px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .header {
+      margin-bottom: 28px;
+    }
+
+    .name {
+      margin: 0 0 6px;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .contact,
+    .target {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .target {
+      margin-top: 4px;
+      color: #344054;
+      font-weight: 500;
+    }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      padding: 5px 10px 5px 14px;
+      border-left: 4px solid var(--blue);
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .item {
+      margin: 10px 0 12px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+      margin-bottom: 2px;
+      font-weight: 700;
+    }
+
+    .item-title {
+      font-size: 14px;
+      color: #111827;
+    }
+
+    .item-time {
+      flex: 0 0 auto;
+      color: #344054;
+      font-size: 12.5px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .item-subtitle {
+      margin: 1px 0 5px;
+      color: #344054;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .experience-role {
+      margin: 2px 0 0;
+      color: #111827;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .project-title {
+      margin: 12px 0 4px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .project-desc {
+      margin: 0;
+      color: #344054;
+    }
+
+    .project-section {
+      margin-top: 5px;
+    }
+
+    .project-label {
+      margin-bottom: 1px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .project-block + .project-block {
+      margin-top: 13px;
+      padding-top: 11px;
+      border-top: 1px solid var(--line);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin: 2px 0;
+    }
+
+    .skill-list li,
+    .summary-list li {
+      margin-bottom: 3px;
+    }
+
+    .label {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm 13mm;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11.8px;
+        line-height: 1.45;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .resume {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .header {
+        margin-bottom: 18px;
+      }
+
+      .section {
+        margin-top: 12px;
+      }
+
+      .section-title {
+        margin-bottom: 7px;
+        padding: 4px 8px 4px 12px;
+      }
+
+      .item {
+        margin: 7px 0 9px;
+      }
+
+      .project-title {
+        margin: 9px 0 3px;
+      }
+
+      .project-section {
+        margin-top: 4px;
+      }
+
+      li {
+        margin: 1px 0;
+      }
+
+      .section-title,
+      .item-header,
+      .project-title {
+        break-after: avoid;
+      }
+
+      .item,
+      .project-section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume">
+    <header class="header">
+      <h1 class="name">候选人姓名</h1>
+      <div class="contact">目标城市｜手机号占位｜email@example.com</div>
+      <div class="target">商业化产品经理｜商家增长 / 策略平台 / 运营工具 / 数据驱动</div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">个人概要</h2>
+      <ul class="summary-list">
+        <li>商业化增长产品经理，聚焦商家侧增长，覆盖引导、转化、留存、促活等关键链路。</li>
+        <li>具备策略引擎、激励模板、画像分层和运营工具平台化经验，能将碎片需求沉淀为标准能力。</li>
+        <li>擅长通过数据分层、策略配置、A/B 实验和效果归因提升增长效率，并推动跨团队机制落地。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">工作经历</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">大型互联网公司 A｜商业产品部｜商家增长方向</div>
+          <div class="item-time">YYYY.MM - 至今</div>
+        </div>
+        <p class="experience-role">商业化产品经理 / 平台侧增长产品 Owner / 策略引擎与运营工具方向</p>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">互联网平台公司 B｜商业化中台｜增长产品团队</div>
+          <div class="item-time">YYYY.MM - YYYY.MM</div>
+        </div>
+        <p class="experience-role">产品经理 / 商家运营工具 / 策略配置与数据看板方向</p>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">企业服务公司 C｜运营产品团队</div>
+          <div class="item-time">YYYY.MM - YYYY.MM</div>
+        </div>
+        <p class="experience-role">产品经理 / 运营后台 / 商家管理与任务工具方向</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">项目经历</h2>
+
+      <article class="project-block">
+        <h3 class="project-title">运营分层策略引擎重构（虚拟增长平台项目）</h3>
+        <div class="project-section">
+          <p class="project-desc"><span class="label">项目描述：</span>商家运营长期依赖统一推送和人工经验，难以适配不同生命周期商家的行为差异，导致新商误判、老商激励不足和增长转化效率偏低。项目目标是重构分层运营策略体系，将商家画像、策略配置、激励投放和效果归因沉淀为平台能力。</p>
+        </div>
+        <div class="project-section">
+          <div class="project-label">问题定义：</div>
+          <ul>
+            <li><span class="label">分层有效性：</span>如何让商家画像从行为聚类升级为可解释、可配置、可指导运营动作的分层标准。</li>
+            <li><span class="label">配置可控性：</span>如何降低运营策略配置门槛，同时在投放前预估触达规模、激励预算和成本风险。</li>
+            <li><span class="label">效果可归因：</span>如何通过实验和漏斗分析识别策略失效原因，并沉淀可复用的策略模板。</li>
+          </ul>
+        </div>
+        <div class="project-section">
+          <div class="project-label">核心职责：</div>
+          <ul>
+            <li>主导商家画像模型迭代，引入反馈行为、任务完成率等维度，形成五类核心商家分层定义。</li>
+            <li>设计拖拽式策略配置器与实时预估能力，支持运营在投放前评估收益预期和激励成本风险。</li>
+            <li>组织三条业务线灰度验证和多轮复盘，将策略配置器、画像体系和风控阈值沉淀为标准组件。</li>
+        </ul>
+        </div>
+        <div class="project-section">
+          <div class="project-label">项目结果：</div>
+          <ul>
+            <li>经过四轮 A/B 实验，ROI 从 0.92 提升至 1.18，沉默商家激活率从 8% 提升至 21%。</li>
+            <li>完成数据分层、模板配置、策略归因的完整链路建设，提升增长策略标准复用效率。</li>
+            <li>能力纳入中后台标准组件和新人训练内容，推动增长产品从经验驱动转向机制驱动。</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project-block">
+        <h3 class="project-title">增长产品方法论与团队机制建设（虚拟组织影响项目）</h3>
+        <div class="project-section">
+          <p class="project-desc"><span class="label">项目描述：</span>增长方向在项目推进中存在认知碎片、策略模板不统一、复盘机制不足等问题，影响团队在策略设计、项目拆解和跨团队协作中的效率。项目目标是建立可复用的方法论、评估模型和项目展示机制，将个人经验沉淀为组织资产。</p>
+        </div>
+        <div class="project-section">
+          <div class="project-label">问题定义：</div>
+          <ul>
+            <li><span class="label">方法沉淀：</span>如何将增长项目中的指标链路、策略模板和协同框架沉淀为团队共识。</li>
+            <li><span class="label">人才培养：</span>如何把项目拆解、节奏掌控和组织复盘转化为可辅导、可评估的成长路径。</li>
+            <li><span class="label">结果展示：</span>如何让横向项目有稳定展示和复盘场域，形成可被复用的结果导向文化。</li>
+          </ul>
+        </div>
+        <div class="project-section">
+          <div class="project-label">核心职责：</div>
+          <ul>
+            <li>主导建立增长产品设计方法论，系统梳理指标链路、策略模板和跨团队协同框架。</li>
+            <li>共建产品经理成长路径图，设计项目拆解、节奏掌控、组织复盘三阶段能力评估模型。</li>
+            <li>搭建增长项目 Demo 日机制，作为横向项目展示、案例沉淀和方法复盘的固定场域。</li>
+          </ul>
+        </div>
+        <div class="project-section">
+          <div class="project-label">项目结果：</div>
+          <ul>
+            <li>全年组织 4 场产品与运营联合分享，覆盖增长指标、策略模板和项目复盘方法。</li>
+            <li>成长路径覆盖 4 位新晋同学辅导节奏，帮助团队形成阶段性能力评估标准。</li>
+            <li>Demo 日运行 3 个月收录 6 个项目，推动团队形成可展示、可复盘、可复用的项目文化。</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project-block">
+        <h3 class="project-title">跨团队策略共创与增长看板建设（虚拟协同项目）</h3>
+        <div class="project-section">
+          <p class="project-desc"><span class="label">项目描述：</span>策略投放涉及算法、数据、招商、运营等多个角色，历史上协作更多依赖临时沟通，容易出现业务节奏错位、数据口径不一致和策略适配不足。项目目标是建立从商家预测、反馈看板到策略共创会的跨团队协同闭环。</p>
+        </div>
+        <div class="project-section">
+          <div class="project-label">问题定义：</div>
+          <ul>
+            <li><span class="label">资源分配：</span>如何通过预测模型识别冷启动商家的优先级，提高激励资源分配精准性。</li>
+            <li><span class="label">数据闭环：</span>如何打通配置、任务完成和留存反馈链路，让策略效果可视化、可复盘。</li>
+            <li><span class="label">节奏协同：</span>如何从临时对齐升级为策略共创机制，提升业务节奏预判和策略适配度。</li>
+          </ul>
+        </div>
+        <div class="project-section">
+          <div class="project-label">核心职责：</div>
+          <ul>
+            <li>与算法团队共建商家体征预测模型，用于冷启动商家策略优先级排序和资源分配。</li>
+            <li>与数据团队共建策略反馈仪表盘，打通激励配置、任务完成和商家留存等数据链路。</li>
+            <li>与招商、运营建立策略共创会，推动业务节奏预判、策略预定义和上线后复盘闭环。</li>
+          </ul>
+        </div>
+        <div class="project-section">
+          <div class="project-label">项目结果：</div>
+          <ul>
+            <li>推动跨域协作从事件驱动升级为机制联动，提升多团队策略对齐和反馈效率。</li>
+            <li>形成增长可视化看板和策略共创流程，支撑后续平台化能力接入与收益评估。</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">专业技能</h2>
+      <ul class="skill-list">
+        <li><span class="label">增长产品：</span>商家增长、生命周期运营、策略引擎、任务中心、激励配置、平台化能力建设。</li>
+        <li><span class="label">数据分析：</span>画像分层、漏斗分析、A/B 实验、ROI 评估、效果归因、反馈看板。</li>
+        <li><span class="label">产品设计：</span>拖拽式配置器、实时预估、策略模板、风控阈值、运营后台、标准组件。</li>
+        <li><span class="label">项目推进：</span>需求共建、灰度验证、跨团队协作、节奏管理、复盘机制、方法论沉淀。</li>
+        <li><span class="label">组织影响：</span>产品培训、案例沉淀、新人辅导、Demo 机制、标准手册、团队共识建设。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">教育经历</h2>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">某理工类高校</div>
+          <div class="item-time">YYYY.MM - YYYY.MM</div>
+        </div>
+        <div class="item-subtitle">管理/经济/计算机相关专业｜本科</div>
+        <ul>
+          <li>具备数据分析、商业理解和跨团队沟通能力，能阅读英文产品与数据分析资料。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
