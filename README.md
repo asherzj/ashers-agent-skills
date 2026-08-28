@@ -1,6 +1,6 @@
 # Agent Engineering Skills
 
-一套面向 Coding Agent 的中文研发 Skill 集合。它把需求澄清、原型、规格、工单拆分、TDD、代码评审、Issue 分诊、疑难问题诊断和大型工作寻路组织成可复用的流程与模块。
+一套面向 Coding Agent 的中文研发 Skill 集合。它把口述输入、需求澄清、原型、验收规格、工单拆分、TDD、代码评审、Issue 分诊、疑难问题诊断、大型工作寻路、架构维护和上下文垃圾回收组织成可复用的流程与模块。
 
 > 本项目 fork 自 [mattpocock/skills](https://github.com/mattpocock/skills)，最初从其工程 Skill 的中文翻译起步。
 > 目前已脱离上游同步节奏，围绕中文研发场景、端到端流程编排、仓库适配和 Coding Agent 协作方式独立演化。
@@ -16,11 +16,12 @@
 
 | Skill | 适用场景 | 主要路径 |
 |---|---|---|
-| `flow-feature` | 需要规格和多张工单的新需求 | `grill-with-docs → [prototype] → to-spec → to-tickets → implement × N` |
-| `flow-small-change` | 一次上下文能完成的小改动 | `grill-with-docs → implement` |
+| `flow-feature` | 需要规格和多张工单的新需求 | `[from-transcript] → grill-with-docs → [prototype] → to-spec → to-tickets → implement × N` |
+| `flow-small-change` | 一次上下文能完成的小改动 | `[from-transcript] → grill-with-docs → implement` |
 | `flow-incoming-issue` | 外部提交的 Issue 或 PR | `triage → ready-for-agent 门禁 → implement` |
 | `flow-hard-bug` | 疑难 Bug、间歇问题或性能回归 | `diagnosing-bugs → implement 收尾` |
-| `flow-large-effort` | 路线尚不清晰的超大型工作 | `wayfinder → to-spec → to-tickets → implement × N` |
+| `flow-large-effort` | 路线尚不清晰的超大型工作 | `[from-transcript] → wayfinder → to-spec → to-tickets → implement × N` |
+| `flow-architecture-maintenance` | 保持行为不变的独立架构优化 | `improve-codebase-architecture → to-spec → to-tickets → implement × N → context-gc` |
 
 详细说明见 [`engineering-skills/`](./engineering-skills/)。
 
@@ -41,6 +42,7 @@
 | Skill | 说明 |
 |---|---|
 | `grill-with-docs` | 逐轮澄清方案，同时维护 `CONTEXT.md` 与 ADR |
+| `from-transcript` | 把口述和逐字稿整理成经人类确认的研发输入 |
 | `prototype` | 用一次性逻辑或 UI 原型回答一个具体设计问题 |
 | `to-spec` | 把当前上下文综合成规格并发布到工单系统 |
 | `to-tickets` | 把规格拆成带阻塞边的纵向交付工单 |
@@ -65,6 +67,7 @@
 | `domain-modeling` | 打磨领域术语并维护上下文文档与 ADR |
 | `codebase-design` | 使用深模块、接口、接缝和局部性设计模块边界 |
 | `improve-codebase-architecture` | 扫描代码库并发现值得深化的架构机会 |
+| `context-gc` | 审计并清理过期、重复和矛盾的长期项目上下文 |
 | `wizard` | 为只有人类能完成的第三方配置或切换步骤生成交互向导 |
 | `grilling` | 单独使用逐轮访谈原语，不附带仓库文档包装 |
 

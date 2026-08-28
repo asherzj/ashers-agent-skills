@@ -1,5 +1,5 @@
 interface:
   display_name: "工单实现"
-  short_description: "按一份规格或一张工单完成端到端实现、验证、评审及经授权的提交与推送"
+  short_description: "按验收外循环完成单工单实现、分层验证、评审及经授权的交付"
 policy:
   allow_implicit_invocation: false

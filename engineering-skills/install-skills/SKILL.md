@@ -21,17 +21,20 @@ disable-model-invocation: true
 
 ## 3. 安装范围
 
-扫描 `engineering-skills/` 的一级子目录，只安装其中直接包含 `SKILL.md` 的目录。这里应当得到 25 个 Skill：5 个封装流程、18 个工程模块、`grilling` 访谈原语和 `install-skills` 安装入口。
+扫描 `engineering-skills/` 的一级子目录，只安装其中直接包含 `SKILL.md` 的目录。这里应当得到 28 个 Skill：6 个封装流程、20 个工程模块、`grilling` 访谈原语和 `install-skills` 安装入口。
 
 `engineering-skills/` 自身是集合根目录，不作为 Skill 安装；说明性 `README.md` 同样不安装。不要递归猜测更深层级，因为本仓库约定每个 Skill 都必须直接位于这一层。
 
 关键依赖关系：
 
-- `flow-feature` → `grill-with-docs`、`prototype`、`to-spec`、`to-tickets`、`implement`
-- `flow-small-change` → `grill-with-docs`、`implement`
+- `flow-feature` → `from-transcript`（按需）、`grill-with-docs`、`prototype`、`to-spec`、`to-tickets`、`implement`
+- `flow-small-change` → `from-transcript`（按需）、`grill-with-docs`、`implement`
 - `flow-incoming-issue` → `triage`、`implement`
 - `flow-hard-bug` → `diagnosing-bugs`、`implement`、`code-review`
-- `flow-large-effort` → `wayfinder`、`to-spec`、`to-tickets`、`implement`
+- `flow-large-effort` → `from-transcript`（按需）、`wayfinder`、`to-spec`、`to-tickets`、`implement`
+- `flow-architecture-maintenance` → `improve-codebase-architecture`、`to-spec`、`to-tickets`、`implement`、`context-gc`
+- `from-transcript` → `grilling`、`domain-modeling`
+- `context-gc` → `grilling`、`domain-modeling`
 - `grill-with-docs` → `grilling`、`domain-modeling`
 - `improve-codebase-architecture` → `codebase-design`、`domain-modeling`、`grilling`
 - `wayfinder` → `domain-modeling`、`grilling`、`prototype`、`research`

@@ -1,0 +1,6 @@
+interface:
+  display_name: "逐字稿研发输入"
+  short_description: "把口述和会议逐字稿整理成经确认、可进入研发流程的输入简报"
+  default_prompt: "使用 $from-transcript 把这份口述或逐字稿整理成可确认的研发输入。"
+policy:
+  allow_implicit_invocation: false

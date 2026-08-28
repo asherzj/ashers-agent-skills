@@ -33,7 +33,7 @@ description: "对自某个固定点（commit、branch、tag 或 merge-base）以
 
 ### 3. 找出规范来源
 
-仓库中任何记载代码应当如何编写的文档，例如 `CODING_STANDARDS.md` 或 `CONTRIBUTING.md`。
+仓库中任何记载代码应当如何编写和依赖的文档，例如 `AGENTS.md`、`CODING_STANDARDS.md`、`CONTRIBUTING.md`、架构说明、`CONTEXT-MAP.md` 和本次影响区域内的 ADR。领域词汇表只用于检查名称和语义，不把实现细节强塞进 `CONTEXT.md`。
 
 在仓库已有文档之外，Standards 轴始终附带下面的**坏味道基线**：一组固定的 Fowler 代码坏味道（_Refactoring_ 第 3 章），即使仓库没有任何文档也适用。有两条规则约束它：
 
@@ -67,7 +67,7 @@ description: "对自某个固定点（commit、branch、tag 或 merge-base）以
 
 - diff 命令和 commit 列表。
 - spec 的路径或抓取到的内容。
-- 任务简述："报告：(a) spec 要求了但缺失或不完整的需求；(b) diff 中没被要求的行为（scope creep，范围蔓延）；(c) 看起来已实现但实现方式可疑的需求。每条发现引用 spec 原句。400 词以内。"
+- 任务简述："报告：(a) spec 要求了但缺失或不完整的需求；(b) 没有对应证据的验收用例，尤其是关键异常与外部依赖失败；(c) diff 中没被要求的行为（scope creep，范围蔓延）；(d) 临时兼容、Feature Flag、双写或旧接口没有按退出条件删除；(e) 看起来已实现但实现方式可疑的需求。每条发现引用 spec 原句或验收编号。不要要求每层重复同一测试，只检查证据链是否完整。400 词以内。"
 
 如果 spec 缺失，跳过 Spec 子代理，并在最终报告中注明。
 

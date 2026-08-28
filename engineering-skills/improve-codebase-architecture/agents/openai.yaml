@@ -1,5 +1,5 @@
 interface:
   display_name: "改进代码库架构"
-  short_description: "扫描代码库的架构深化机会并通过访谈形成可执行改进方向"
+  short_description: "在既有范围内扫描架构深化、旧结构删除和可测试性改进机会"
 policy:
   allow_implicit_invocation: false

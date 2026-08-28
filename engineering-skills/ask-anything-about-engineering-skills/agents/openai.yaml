@@ -1,5 +1,5 @@
 interface:
   display_name: "研发 Skill 问答与路由"
-  short_description: "在封装流程和自由组合模块之间选择正确入口并解释后续衔接方式"
+  short_description: "为口述输入、功能交付、架构维护和上下文回收选择正确研发入口"
 policy:
   allow_implicit_invocation: false

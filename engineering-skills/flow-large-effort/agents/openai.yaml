@@ -1,6 +1,6 @@
 interface:
   display_name: "超大型工作交付流程"
-  short_description: "从共享决策地图收敛到规格、依赖工单、逐项实现与完整交付"
+  short_description: "从口述和共享决策地图收敛到验收规格、依赖工单与逐项交付"
   default_prompt: "使用 $flow-large-effort 为这项超大型工作绘制路线并推进交付。"
 policy:
   allow_implicit_invocation: false

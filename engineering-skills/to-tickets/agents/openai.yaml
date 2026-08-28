@@ -1,5 +1,5 @@
 interface:
   display_name: "拆分交付工单"
-  short_description: "把计划或规格拆成带阻塞关系、可独立交付的纵向切片工单"
+  short_description: "把规格拆成带验收证据、阻塞关系和退出条件的纵向交付工单"
 policy:
   allow_implicit_invocation: false

@@ -8,11 +8,12 @@
 
 | Skill | 适用场景 | 编排路径 |
 |---|---|---|
-| [`flow-feature`](./flow-feature/SKILL.md) | 需要规格和多张工单的新需求 | `grill-with-docs → [prototype] → to-spec → to-tickets → implement × N` |
-| [`flow-small-change`](./flow-small-change/SKILL.md) | 一次上下文能完成的小改动 | `grill-with-docs → implement` |
+| [`flow-feature`](./flow-feature/SKILL.md) | 需要规格和多张工单的新需求 | `[from-transcript] → grill-with-docs → [prototype] → to-spec → to-tickets → implement × N` |
+| [`flow-small-change`](./flow-small-change/SKILL.md) | 一次上下文能完成的小改动 | `[from-transcript] → grill-with-docs → implement` |
 | [`flow-incoming-issue`](./flow-incoming-issue/SKILL.md) | 外部提交的 Issue 或 PR | `triage → ready-for-agent 门禁 → implement` |
 | [`flow-hard-bug`](./flow-hard-bug/SKILL.md) | 疑难 Bug 或性能回归 | `diagnosing-bugs → implement 收尾` |
-| [`flow-large-effort`](./flow-large-effort/SKILL.md) | 路线尚不清晰的超大型工作 | `wayfinder → to-spec → to-tickets → implement × N` |
+| [`flow-large-effort`](./flow-large-effort/SKILL.md) | 路线尚不清晰的超大型工作 | `[from-transcript] → wayfinder → to-spec → to-tickets → implement × N` |
+| [`flow-architecture-maintenance`](./flow-architecture-maintenance/SKILL.md) | 保持行为不变的独立架构优化 | `improve-codebase-architecture → to-spec → to-tickets → implement × N → context-gc` |
 
 ## 自由组合的小模块
 
@@ -26,6 +27,7 @@
 
 ### 澄清与规划
 
+- [`from-transcript`](./from-transcript/SKILL.md)：把口述和逐字稿整理成经人类确认的研发输入。
 - [`grill-with-docs`](./grill-with-docs/SKILL.md)：逐轮澄清方案并同步维护领域文档与 ADR。
 - [`prototype`](./prototype/SKILL.md)：制作一次性逻辑或 UI 原型，回答具体设计问题。
 - [`to-spec`](./to-spec/SKILL.md)：把当前对话综合成规格并发布到工单系统。
