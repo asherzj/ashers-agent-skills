@@ -76,6 +76,7 @@ PINGFANG_OUTPUTS = {
 # when the PDF is otherwise valid.
 MIN_BLOCK_LAST_LINE_CHARS = 8
 MIN_BLOCK_LAST_LINE_FILL = 0.15
+DEFAULT_MIN_NONFINAL_FILL = 0.82
 BULLET_PREFIX_CHARS = "•●▪◦·‣⁃-–—"
 MONITORED_DIV_CLASSES = {"contact", "target", "item-subtitle", "mock-banner"}
 
@@ -907,8 +908,10 @@ def analyze_page_fill(images: Sequence[Path], min_nonfinal_fill: float) -> list[
         if sparse_pages:
             fail(
                 "Non-final pages have excessive bottom whitespace: "
-                f"pages {sparse_pages}, fill ratios {ratios}. Adjust project break rules or "
-                "content flow; use --min-nonfinal-fill 0 only after visual review."
+                f"pages {sparse_pages}, fill ratios {ratios}, required minimum "
+                f"{min_nonfinal_fill:.2f}. Remove unnecessary explicit page breaks, avoid "
+                "protecting whole long projects from splitting, or rebalance complete content "
+                "blocks. Do not lower this gate merely to make the build pass."
             )
     return ratios
 
@@ -1050,8 +1053,8 @@ def command_build(args: argparse.Namespace) -> int:
         "visual_review_required": True,
         "visual_review_instruction": (
             "Inspect every page image (or the contact sheet) for clipping, overlap, bad page "
-            "breaks, font size, contact readability, balanced bullet wrapping, and template "
-            "visual consistency."
+            "breaks, large bottom whitespace on non-final pages, font size, contact readability, "
+            "balanced bullet wrapping, and template visual consistency."
         ),
     }
     report_path = run_dir / "qa-report.json"
@@ -1064,8 +1067,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
             "Copy the canonical resume HTML template, build an A4 PDF with Chrome, render "
-            "page PNGs, and run deterministic ATS/layout preflight checks, including a hard "
-            "wrapped text-block orphan-line gate."
+            "page PNGs, and run deterministic ATS/layout preflight checks, including hard "
+            "wrapped text-block orphan-line and non-final page-fill gates."
         )
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -1106,10 +1109,11 @@ def build_parser() -> argparse.ArgumentParser:
     build.add_argument(
         "--min-nonfinal-fill",
         type=float,
-        default=0.72,
+        default=DEFAULT_MIN_NONFINAL_FILL,
         help=(
-            "Minimum used-height ratio for every non-final page (default: 0.72; "
-            "use 0 only after visual review)."
+            "Minimum bottom-most visible-content ratio for every non-final page "
+            f"(default: {DEFAULT_MIN_NONFINAL_FILL:.2f}; lower only for intentional whitespace "
+            "after visual review)."
         ),
     )
     build.add_argument(

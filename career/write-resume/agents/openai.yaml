@@ -1,4 +1,4 @@
 interface:
   display_name: "简历写作"
   short_description: "把经历转化为真实、量化、面试可自证且匹配目标岗位的简历"
-  default_prompt: "使用 $write-resume 帮我撰写或优化简历；先补齐目标岗位、经历和证据，并确保所有提升或降低类结果都给出从 A 到 B 的同口径基线。"
+  default_prompt: "使用 $write-resume 帮我撰写或优化简历；先补齐目标岗位、经历和证据，确保变化型结果给出从 A 到 B 的同口径基线，并检查非末页没有大块底部空白。"
