@@ -1,6 +1,6 @@
 # Agent Skills
 
-一套面向 Agent 的中文 Skill 集合，按编码、求职准备和写作三个领域组织。当前包含 28 个编码类 Skill 和 1 个求职准备类 Skill；编码类涵盖口述输入、需求澄清、原型、验收规格、工单拆分、TDD、代码评审、Issue 分诊、疑难问题诊断、大型工作寻路、架构维护和上下文垃圾回收。
+一套面向 Agent 的中文 Skill 集合，按编码、求职准备和写作三个领域组织。当前包含 27 个编码类 Skill、1 个求职准备类 Skill，以及 1 个根级安装入口；编码类涵盖口述输入、需求澄清、原型、验收规格、工单拆分、TDD、代码评审、Issue 分诊、疑难问题诊断、大型工作寻路、架构维护和上下文垃圾回收。
 
 > 本项目 fork 自 [mattpocock/skills](https://github.com/mattpocock/skills)，最初从其工程 Skill 的中文翻译起步。
 > 目前已脱离上游同步节奏，围绕中文研发场景、端到端流程编排、仓库适配和 Coding Agent 协作方式独立演化。
@@ -10,9 +10,11 @@
 
 | 目录 | 中文领域 | 当前内容 |
 |---|---|---|
-| [`coding/`](./coding/) | 编码 | 现有 28 个研发流程与工程模块 |
+| [`coding/`](./coding/) | 编码 | 现有 27 个研发流程与工程模块 |
 | [`career/`](./career/) | 求职准备 | 现有 `write-resume` 简历写作 Skill |
 | [`writing/`](./writing/) | 写作 | 为选题、起草、编辑和发布类 Skill 预留 |
+
+根目录的 [`install-skills/`](./install-skills/) 是唯一不属于分类的安装入口。它会先让用户选择 `coding`、`career`、`writing` 或 `all`，再安装或升级所选分类。
 
 ## Coding Skill 的两种使用方式
 
@@ -43,7 +45,6 @@
 |---|---|
 | `ask-anything-about-engineering-skills` | 在封装流程和自由组合模块之间选择正确入口 |
 | `setup-engineering-skills` | 为具体仓库配置工单系统、分诊标签与领域文档布局 |
-| `install-skills` | 把本仓库全部 Skill 安装或升级到用户级 Skill 目录 |
 
 #### 澄清与规划
 
@@ -81,13 +82,13 @@
 
 ## 安装
 
-方式一（推荐）：让 Agent 克隆仓库后调用 `install-skills`，由它探测当前 Agent 的用户级 Skill 目录并完成安装与验证。
+方式一（推荐）：让 Agent 克隆仓库后调用根目录的 `install-skills`。它会先提示选择 `coding`、`career`、`writing` 或 `all`，再探测当前 Agent 的用户级 Skill 目录并完成所选分类的安装与验证；安装器自身会一并安装或升级。
 
 ```bash
 git clone --depth 1 https://github.com/asherzj/ashers-agent-skills.git
 ```
 
-方式二（手动）：扫描根目录下 `<category>/` 中直接包含 `SKILL.md` 的 Skill 目录，并把每个 Skill 目录复制到当前 Agent 的用户级 Skill 目录。分类目录及其中的说明性 `README.md` 不安装；新开会话后生效。
+方式二（手动）：先复制根目录的 `install-skills/`，再从希望安装的分类中扫描直接包含 `SKILL.md` 的一级子目录，并把每个 Skill 目录复制到当前 Agent 的用户级 Skill 目录。分类目录及其中的说明性 `README.md` 不安装；新开会话后生效。
 
 ## 为项目初始化工程 Skill
 
