@@ -10,11 +10,9 @@
 
 | 目录 | 中文领域 | 当前内容 |
 |---|---|---|
-| [`skills/coding/`](./skills/coding/) | 编码 | 现有 28 个研发流程与工程模块 |
-| [`skills/career/`](./skills/career/) | 求职准备 | 现有 `write-resume` 简历写作 Skill |
-| [`skills/writing/`](./skills/writing/) | 写作 | 为选题、起草、编辑和发布类 Skill 预留 |
-
-分类总览见 [`skills/`](./skills/)。
+| [`coding/`](./coding/) | 编码 | 现有 28 个研发流程与工程模块 |
+| [`career/`](./career/) | 求职准备 | 现有 `write-resume` 简历写作 Skill |
+| [`writing/`](./writing/) | 写作 | 为选题、起草、编辑和发布类 Skill 预留 |
 
 ## Coding Skill 的两种使用方式
 
@@ -33,7 +31,7 @@
 | `flow-large-effort` | 路线尚不清晰的超大型工作 | `[from-transcript] → wayfinder → to-spec → to-tickets → implement × N` |
 | `flow-architecture-maintenance` | 保持行为不变的独立架构优化 | `improve-codebase-architecture → to-spec → to-tickets → implement × N → context-gc` |
 
-详细说明见 [`skills/coding/`](./skills/coding/)。
+详细说明见 [`coding/`](./coding/)。
 
 ### 2. 自由组合的小模块
 
@@ -89,7 +87,7 @@
 git clone --depth 1 https://github.com/asherzj/ashers-agent-skills.git
 ```
 
-方式二（手动）：扫描 `skills/<category>/` 下直接包含 `SKILL.md` 的 Skill 目录，并把每个 Skill 目录复制到当前 Agent 的用户级 Skill 目录。`skills/`、分类目录和其中的说明性 `README.md` 不安装；新开会话后生效。
+方式二（手动）：扫描根目录下 `<category>/` 中直接包含 `SKILL.md` 的 Skill 目录，并把每个 Skill 目录复制到当前 Agent 的用户级 Skill 目录。分类目录及其中的说明性 `README.md` 不安装；新开会话后生效。
 
 ## 为项目初始化工程 Skill
 
