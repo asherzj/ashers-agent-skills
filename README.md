@@ -82,13 +82,50 @@
 
 ## 安装
 
-方式一（推荐）：让 Agent 克隆仓库后调用根目录的 `install-skills`。它会先提示选择 `coding`、`career`、`writing` 或 `all`，再探测当前 Agent 的用户级 Skill 目录并完成所选分类的安装与验证；安装器自身会一并安装或升级。
+### 可选范围
+
+| 选择 | 当前内容 | 实际安装数量（含安装器） |
+|---|---|---:|
+| `coding` | 27 个编码与软件研发 Skill | 28 |
+| `career` | 1 个求职准备 Skill | 2 |
+| `writing` | 当前暂无 Skill | 1 |
+| `all` | 全部三个分类 | 29 |
+
+支持多选，例如 `coding + career`。根级 `install-skills` 会始终随流程安装或升级；未选择的分类不会被安装、升级或删除。
+
+### 首次安装（推荐）
+
+1. 克隆仓库并进入目录：
 
 ```bash
 git clone --depth 1 https://github.com/asherzj/ashers-agent-skills.git
+cd ashers-agent-skills
 ```
 
-方式二（手动）：先复制根目录的 `install-skills/`，再从希望安装的分类中扫描直接包含 `SKILL.md` 的一级子目录，并把每个 Skill 目录复制到当前 Agent 的用户级 Skill 目录。分类目录及其中的说明性 `README.md` 不安装；新开会话后生效。
+2. 向当前 Agent 发送：
+
+```text
+请读取 ./install-skills/SKILL.md 并按其中的流程安装 Skill；如果我尚未指定分类，先让我选择需要安装的目录。
+```
+
+3. 选择 `coding`、`career`、`writing`、`all` 或多个分类。安装目录无法由 Agent 安全确定时，再确认用户级 Skill 目录。
+4. Agent 会生成精确清单，检查重名，安装所选分类，验证文件与依赖，并清理本次临时文件。安装完成后新开会话生效。
+
+分类选择和无法自动确定的安装目录需要用户确认；源码获取、扫描、复制、验证与清理由 Agent 自主完成，不需要逐个确认 Skill。
+
+### 后续安装或升级
+
+安装器已经进入用户级 Skill 目录后，直接调用：
+
+```text
+$install-skills
+```
+
+再次选择需要新增或升级的分类即可。只升级所选分类，不影响其他已安装 Skill。
+
+### 手动安装
+
+先复制根目录的 `install-skills/`，再从希望安装的分类中扫描直接包含 `SKILL.md` 的一级子目录，并把每个 Skill 目录复制到当前 Agent 的用户级 Skill 目录。分类目录及其中的说明性 `README.md` 不安装；新开会话后生效。
 
 ## 为项目初始化工程 Skill
 

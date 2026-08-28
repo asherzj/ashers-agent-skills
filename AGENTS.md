@@ -29,6 +29,34 @@
 - 重命名时搜索旧名称和旧路径，确保正文、相对链接、安装说明和流程引用中没有残留。
 - 修改流程编排时，同时检查 `ask-anything-about-engineering-skills` 的路由说明和各 `flow-*` Skill 的阶段边界。
 
+## 安装与升级指引
+
+首次安装时，让用户先克隆仓库并进入仓库目录：
+
+```bash
+git clone --depth 1 https://github.com/asherzj/ashers-agent-skills.git
+cd ashers-agent-skills
+```
+
+然后让 Agent 读取根目录的 `install-skills/SKILL.md` 并按其流程执行。可以直接使用以下提示：
+
+```text
+请读取 ./install-skills/SKILL.md 并按其中的流程安装 Skill；如果我尚未指定分类，先让我选择需要安装的目录。
+```
+
+如果 `install-skills` 已经安装到用户级 Skill 目录，后续升级可直接调用 `$install-skills`。
+
+安装范围固定按根目录分类选择：
+
+- `coding`：27 个 Skill；
+- `career`：1 个 Skill；
+- `writing`：当前 0 个 Skill；
+- `all`：全部分类。
+
+可以多选分类。用户未明确选择时，分类选择是必须暂停的 human-in-the-loop 门禁；无法可靠判断用户级 Skill 目录时，也必须让用户确认解析后的目标目录。选择和目标明确后，由 Agent 全权完成源码获取、清单生成、重名检查、安装、验证与临时文件清理，不逐个请求确认。
+
+根级 `install-skills` 每次都随安装流程同步。未选分类和用户已有的其他 Skill 必须保持不变，不得因为升级而删除。分类目录及其中的说明性 `README.md` 不作为 Skill 安装。
+
 ## 验证
 
 提交前至少完成以下检查：
