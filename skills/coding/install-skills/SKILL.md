@@ -21,7 +21,7 @@ disable-model-invocation: true
 
 ## 3. 安装范围
 
-扫描 `skills/` 下约定的分类目录 `coding`、`career-prep` 和 `writing`，再扫描每个分类的一级子目录；只安装直接包含 `SKILL.md` 的目录。当前应当得到 29 个 Skill：`coding` 下 28 个，包括 6 个封装流程、20 个工程模块、`grilling` 访谈原语和 `install-skills` 安装入口；`career-prep` 下 1 个 `write-resume`；`writing` 下暂时没有 Skill。
+扫描 `skills/` 下约定的分类目录 `coding`、`career` 和 `writing`，再扫描每个分类的一级子目录；只安装直接包含 `SKILL.md` 的目录。当前应当得到 29 个 Skill：`coding` 下 28 个，包括 6 个封装流程、20 个工程模块、`grilling` 访谈原语和 `install-skills` 安装入口；`career` 下 1 个 `write-resume`；`writing` 下暂时没有 Skill。
 
 `skills/`、三个分类目录和说明性 `README.md` 都不作为 Skill 安装。不要递归猜测更深层级，因为本仓库约定每个 Skill 都必须直接位于分类目录下。
 
