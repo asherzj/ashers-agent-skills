@@ -1,12 +1,22 @@
-# Agent Engineering Skills
+# Agent Skills
 
-一套面向 Coding Agent 的中文研发 Skill 集合。它把口述输入、需求澄清、原型、验收规格、工单拆分、TDD、代码评审、Issue 分诊、疑难问题诊断、大型工作寻路、架构维护和上下文垃圾回收组织成可复用的流程与模块。
+一套面向 Agent 的中文 Skill 集合，按编码、求职准备和写作三个领域组织。当前已有 Skill 全部属于编码类，涵盖口述输入、需求澄清、原型、验收规格、工单拆分、TDD、代码评审、Issue 分诊、疑难问题诊断、大型工作寻路、架构维护和上下文垃圾回收。
 
 > 本项目 fork 自 [mattpocock/skills](https://github.com/mattpocock/skills)，最初从其工程 Skill 的中文翻译起步。
 > 目前已脱离上游同步节奏，围绕中文研发场景、端到端流程编排、仓库适配和 Coding Agent 协作方式独立演化。
 > 原始作品及许可证归属见 [LICENSE](./LICENSE)；本项目后续修改继续遵循 MIT 许可证。
 
-## 两种使用方式
+## Skill 分类
+
+| 目录 | 中文领域 | 当前内容 |
+|---|---|---|
+| [`skills/coding/`](./skills/coding/) | 编码 | 现有 28 个研发流程与工程模块 |
+| [`skills/career-prep/`](./skills/career-prep/) | 求职准备 | 为简历、作品集、面试和求职决策类 Skill 预留 |
+| [`skills/writing/`](./skills/writing/) | 写作 | 为选题、起草、编辑和发布类 Skill 预留 |
+
+分类总览见 [`skills/`](./skills/)。
+
+## Coding Skill 的两种使用方式
 
 用户可直接选择完整交付流程，也可以像积木一样自由组合小模块。不确定怎么选时，调用 `ask-anything-about-engineering-skills`。
 
@@ -23,7 +33,7 @@
 | `flow-large-effort` | 路线尚不清晰的超大型工作 | `[from-transcript] → wayfinder → to-spec → to-tickets → implement × N` |
 | `flow-architecture-maintenance` | 保持行为不变的独立架构优化 | `improve-codebase-architecture → to-spec → to-tickets → implement × N → context-gc` |
 
-详细说明见 [`engineering-skills/`](./engineering-skills/)。
+详细说明见 [`skills/coding/`](./skills/coding/)。
 
 ### 2. 自由组合的小模块
 
@@ -79,7 +89,7 @@
 git clone --depth 1 https://github.com/asherzj/agent-engineering-skills.git
 ```
 
-方式二（手动）：把 `engineering-skills/` 下直接包含 `SKILL.md` 的每个一级子目录复制到当前 Agent 的用户级 Skill 目录，新开会话后生效。`engineering-skills/` 自身只是 Skill 集合根目录，不作为一个 Skill 安装。
+方式二（手动）：扫描 `skills/<category>/` 下直接包含 `SKILL.md` 的 Skill 目录，并把每个 Skill 目录复制到当前 Agent 的用户级 Skill 目录。`skills/`、分类目录和其中的说明性 `README.md` 不安装；新开会话后生效。
 
 ## 为项目初始化工程 Skill
 
@@ -102,6 +112,7 @@ $setup-engineering-skills
 ## 中文约定
 
 - Skill 的说明、正文、界面名称与用户提示保持中文。
+- 分类目录使用稳定的英文名称：`coding`、`career-prep`、`writing`。
 - `name`、Skill 标识符、命令、文件名、路径和标签字符串保留稳定的英文形式，避免破坏互引用和自动触发。
 - 必须保留的协议字段、代码、命令和模板键不做强行翻译。
 - 新增或修改 Skill 时，同步更新 `agents/openai.yaml` 中的中文界面信息。
