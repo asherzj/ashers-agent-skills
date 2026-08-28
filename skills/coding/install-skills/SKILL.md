@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # 安装或升级整套 Skill
 
-把 `https://github.com/asherzj/agent-engineering-skills` 中的全部 Skill 安装到当前 Coding Agent 的用户级 Skill 目录。重复运行即为升级。
+把 `https://github.com/asherzj/ashers-agent-skills` 中的全部 Skill 安装到当前 Coding Agent 的用户级 Skill 目录。重复运行即为升级。
 
 ## 1. 定位用户级 Skill 目录
 
@@ -14,8 +14,8 @@ disable-model-invocation: true
 
 ## 2. 获取仓库源码
 
-- 优先使用：`git clone --depth 1 https://github.com/asherzj/agent-engineering-skills.git /tmp/agent-engineering-skills`
-- 如果克隆因网络问题失败，改用：`curl -sL --retry 3 -o /tmp/agent-engineering-skills.tar.gz https://codeload.github.com/asherzj/agent-engineering-skills/tar.gz/refs/heads/main`
+- 优先使用：`git clone --depth 1 https://github.com/asherzj/ashers-agent-skills.git /tmp/ashers-agent-skills`
+- 如果克隆因网络问题失败，改用：`curl -sL --retry 3 -o /tmp/ashers-agent-skills.tar.gz https://codeload.github.com/asherzj/ashers-agent-skills/tar.gz/refs/heads/main`
 
 只在明确、独立的临时目录中操作，不能把用户的工作目录当作安装暂存区。
 
