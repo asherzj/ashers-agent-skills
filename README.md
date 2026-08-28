@@ -1,6 +1,6 @@
 # Agent Skills
 
-一套面向 Agent 的中文 Skill 集合，按编码、求职准备和写作三个领域组织。当前已有 Skill 全部属于编码类，涵盖口述输入、需求澄清、原型、验收规格、工单拆分、TDD、代码评审、Issue 分诊、疑难问题诊断、大型工作寻路、架构维护和上下文垃圾回收。
+一套面向 Agent 的中文 Skill 集合，按编码、求职准备和写作三个领域组织。当前包含 28 个编码类 Skill 和 1 个求职准备类 Skill；编码类涵盖口述输入、需求澄清、原型、验收规格、工单拆分、TDD、代码评审、Issue 分诊、疑难问题诊断、大型工作寻路、架构维护和上下文垃圾回收。
 
 > 本项目 fork 自 [mattpocock/skills](https://github.com/mattpocock/skills)，最初从其工程 Skill 的中文翻译起步。
 > 目前已脱离上游同步节奏，围绕中文研发场景、端到端流程编排、仓库适配和 Coding Agent 协作方式独立演化。
@@ -11,7 +11,7 @@
 | 目录 | 中文领域 | 当前内容 |
 |---|---|---|
 | [`skills/coding/`](./skills/coding/) | 编码 | 现有 28 个研发流程与工程模块 |
-| [`skills/career-prep/`](./skills/career-prep/) | 求职准备 | 为简历、作品集、面试和求职决策类 Skill 预留 |
+| [`skills/career-prep/`](./skills/career-prep/) | 求职准备 | 现有 `write-resume` 简历写作 Skill |
 | [`skills/writing/`](./skills/writing/) | 写作 | 为选题、起草、编辑和发布类 Skill 预留 |
 
 分类总览见 [`skills/`](./skills/)。
