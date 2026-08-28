@@ -33,7 +33,7 @@ Owned X module in Y project; delivered A/B/C, enabling measurable outcome Z.
 ```
 
 ```text
-Diagnosed X bottleneck, introduced Y, and cut latency/error/cost/time by Z.
+Diagnosed X bottleneck, introduced Y, and reduced latency/error/cost/time from A to B.
 ```
 
 ```text
@@ -43,6 +43,20 @@ Coordinated X stakeholders without formal authority, delivered Y by deadline, an
 ```text
 Maintained quality bar by doing X; kept Y metric at/above/below Z across N releases.
 ```
+
+## Baseline Rule
+
+所有变化型结果必须提供可比较的基线和终值。不要只写“提升至 B”“降低至 B”或“优化了 X%”；应写成“指标在同一统计口径下从 A 提升至 B”或“从 A 降低至 B”，并尽量补充统计周期、样本范围或比较对象，让面试官能判断变化的实际量级。
+
+```text
+转化率从18%提升至24%（提升6个百分点），覆盖当月12组A/B实验。
+```
+
+```text
+核心链路P99延迟从800ms降至180ms，统计口径为生产环境连续30天请求。
+```
+
+百分比与百分点不得混用：从18%到24%是增加6个百分点，相对增幅约33.3%。只保留与用户原始数据及计算口径一致的表达。如果用户只提供终值或变化比例，先追问基线；无法确认时使用待确认占位符，或只陈述可以自证的终值和规模，不得声称未经证实的提升或降低。
 
 ## Section Templates
 
@@ -112,7 +126,7 @@ Weak:
 Strong:
 
 ```text
-作为技术接口人对接产品、运营、销售3类角色，将复杂风控规则拆解为可执行配置，减少跨部门确认时间40%。
+作为技术接口人对接产品、运营、销售3类角色，将复杂风控规则拆解为可执行配置，使跨部门平均确认周期从5个工作日缩短至3个工作日。
 ```
 
 Weak:
@@ -132,7 +146,7 @@ Strong:
 If the user lacks numbers, ask about or suggest relevant categories:
 
 - How many users, customers, merchants, requests, files, records, devices, regions, or teams?
-- Before/after values: latency, conversion, cost, failure rate, manual time, delivery cycle, coverage, accuracy.
+- Before/after values under the same definition: latency, conversion, cost, failure rate, manual time, delivery cycle, coverage, accuracy. For every change claim, collect baseline A, outcome B, measurement period, and sample scope.
 - Ranking/rarity: top X%, only N people, first project, largest account, highest priority.
 - Time: built in N weeks, saved N hours/week, supported N releases, maintained for N months.
 - Team: managed N people, coordinated N stakeholders, hired N people, mentored N promotions.
@@ -153,6 +167,7 @@ Score each resume from 1-5:
 - Clarity: can a reader understand the strongest value in 30 seconds?
 - Relevance: does the content match the target role/JD?
 - Evidence: are claims backed by numbers, scope, or concrete examples?
+- Baseline integrity: does every increase/decrease claim show comparable before-and-after values without confusing percentages and percentage points?
 - Ownership: is the candidate's personal contribution clear?
 - Differentiation: does it show why this candidate is not generic?
 - Defensibility: can every strong bullet survive interview challenge?

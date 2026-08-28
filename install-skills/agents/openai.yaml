@@ -1,0 +1,4 @@
+interface:
+  display_name: "选择并安装 Skill"
+  short_description: "选择 coding、career 或 writing 分类，完成安装、升级与验证"
+  default_prompt: "使用 $install-skills 先让我选择 coding、career、writing 或全部分类，再安装或升级所选 Skill。"

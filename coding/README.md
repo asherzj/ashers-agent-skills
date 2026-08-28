@@ -23,7 +23,6 @@
 
 - [`ask-anything-about-engineering-skills`](./ask-anything-about-engineering-skills/SKILL.md)：选择封装流程或自由组合模块。
 - [`setup-engineering-skills`](./setup-engineering-skills/SKILL.md)：配置工单系统、分诊标签和领域文档布局。
-- [`install-skills`](./install-skills/SKILL.md)：安装或升级本仓库全部分类中的 Skill。
 
 ### 澄清与规划
 
