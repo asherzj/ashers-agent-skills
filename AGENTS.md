@@ -6,7 +6,7 @@
 
 ## 目录结构
 
-- 所有可安装 Skill 必须位于 `skills/<category>/<skill-name>/`。当前分类目录固定为 `coding`、`career-prep` 和 `writing`。
+- 所有可安装 Skill 必须位于 `skills/<category>/<skill-name>/`。当前分类目录固定为 `coding`、`career` 和 `writing`。
 - 每个 Skill 必须直接位于所属分类目录下并包含 `SKILL.md`；不要在分类内重新引入 `engineering/`、`productivity/`、`flows/` 等中间层。
 - `skills/` 和各分类目录只是集合与分类入口，不作为 Skill 安装；允许用 `README.md` 说明分类边界和清单。
 - Skill 文件夹名必须与 `SKILL.md` frontmatter 中的 `name` 完全一致，名称使用小写字母、数字和连字符。

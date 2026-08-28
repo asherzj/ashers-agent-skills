@@ -11,7 +11,7 @@
 | 目录 | 中文领域 | 当前内容 |
 |---|---|---|
 | [`skills/coding/`](./skills/coding/) | 编码 | 现有 28 个研发流程与工程模块 |
-| [`skills/career-prep/`](./skills/career-prep/) | 求职准备 | 现有 `write-resume` 简历写作 Skill |
+| [`skills/career/`](./skills/career/) | 求职准备 | 现有 `write-resume` 简历写作 Skill |
 | [`skills/writing/`](./skills/writing/) | 写作 | 为选题、起草、编辑和发布类 Skill 预留 |
 
 分类总览见 [`skills/`](./skills/)。
@@ -112,7 +112,7 @@ $setup-engineering-skills
 ## 中文约定
 
 - Skill 的说明、正文、界面名称与用户提示保持中文。
-- 分类目录使用稳定的英文名称：`coding`、`career-prep`、`writing`。
+- 分类目录使用稳定的英文名称：`coding`、`career`、`writing`。
 - `name`、Skill 标识符、命令、文件名、路径和标签字符串保留稳定的英文形式，避免破坏互引用和自动触发。
 - 必须保留的协议字段、代码、命令和模板键不做强行翻译。
 - 新增或修改 Skill 时，同步更新 `agents/openai.yaml` 中的中文界面信息。
