@@ -86,7 +86,7 @@
 方式一（推荐）：让 Agent 克隆仓库后调用 `install-skills`，由它探测当前 Agent 的用户级 Skill 目录并完成安装与验证。
 
 ```bash
-git clone --depth 1 https://github.com/asherzj/agent-engineering-skills.git
+git clone --depth 1 https://github.com/asherzj/ashers-agent-skills.git
 ```
 
 方式二（手动）：扫描 `skills/<category>/` 下直接包含 `SKILL.md` 的 Skill 目录，并把每个 Skill 目录复制到当前 Agent 的用户级 Skill 目录。`skills/`、分类目录和其中的说明性 `README.md` 不安装；新开会话后生效。
