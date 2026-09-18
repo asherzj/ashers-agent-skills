@@ -1,198 +1,108 @@
-# Resume Patterns
+# 简历文案与证据模式
 
-The examples in this reference are fictional. Use their structure, never their facts or metrics, in a user's resume.
+示例均为虚构，只借鉴结构，不复用人物、项目或数字。适用于完整写作、项目改写、版本比较与诊断。
 
-## Decision Point Checklist
+## 先找值得面试的证据
 
-A strong resume item usually has at least two of these:
+按目标岗位相关性、个人负责范围、决策难度、结果可信度和近期程度选择材料。系统规模提供背景，个人做出的选择和交付说明贡献。没有可靠数字的技术取舍或组织改变也有价值；不要为了量化加入“少改了两次代码”等缺乏上下文的弱指标。
 
-- Role relevance: directly maps to the target job.
-- Scarcity: few candidates can credibly claim it.
-- Scale: users, revenue, traffic, data, team, geography, complexity.
-- Impact: improved a business, product, system, team, or process.
-- Recognition: awards, performance rating, promotion, adoption, public result.
-- Defensibility: the candidate can explain their exact contribution.
-- Personality evidence: ownership, quality bar, service mindset, learning ability, persistence, collaboration.
+概要通常 2-3 条，包含岗位定位、一个代表性成果和可信认可。避免只有“经验丰富、擅长治理、跨团队协作”，也不要堆满所有项目数字。技能做简洁分类，具体深度由项目证明。
 
-Delete or compress items that provide none of these.
+## 项目正文
 
-## Bullet Formulas
-
-Use one of these depending on the evidence:
+默认结构：
 
 ```text
-Built/led/owned X for Y users/teams/systems, improving Z by N%.
+项目标题｜所属团队
+1-2 行说明业务用途、个人角色和必要规模。
+- 贡献主题：关键约束或取舍 + 行动/机制 + 对应结果。
+- 贡献主题：另一项独立贡献及其证据。
 ```
+
+“背景、挑战、职责、结果”是梳理素材的问题，不是必须逐项展示的小标题。把属于同一贡献的行动和结果放在一起；同一套缓存、版本校验和监控机制不要在问题、职责、结果中重复介绍。
+
+重点项目通常 3-4 条，确有独立证据可保留 5 条；早期项目可以 2 条。优先一行，必要时接近完整的两行。条数和行长服从真实信息量与最终渲染，不按固定字数填充。
+
+### 技术判断：让读者看到为什么这样做
+
+弱表达：
 
 ```text
-Under constraint X, designed Y approach, reducing/increasing Z from A to B.
+负责配置平台建设，使用缓存、消息队列、ORM 和监控大盘。
 ```
+
+更有判断信息的表达：
 
 ```text
-Owned X module in Y project; delivered A/B/C, enabling measurable outcome Z.
+配置接入：为控制存量系统改造成本，保留异构表结构，通过元数据映射和动态表单统一接入；单表运营页面建设由 2 天缩短至 3 小时。
 ```
+
+选择有事实支撑的关键约束：兼容性、稳定性、改造成本、性能或协作依赖。保留真正解释方案的机制，不把每个库名或校验步骤都塞进同一条。
+
+### 组织贡献：写具体工作方式的改变
+
+弱表达：
 
 ```text
-Diagnosed X bottleneck, introduced Y, and reduced latency/error/cost/time from A to B.
+推动平台化建设，具有较强 Owner 意识和跨团队协作能力。
 ```
+
+更具体的表达：
 
 ```text
-Coordinated X stakeholders without formal authority, delivered Y by deadline, and created repeatable process Z.
+发布治理：与产品共建审批、灰度和回滚流程，将原先依赖研发操作的策略发布转为产品自助提交、研发审核，并保留版本与变更记录。
 ```
+
+技术措施如何改变接入、发布、排查或交付流程，可以作为高级研发的贡献。不要把每条都改成管理话术，也不要把“统一流程”自行扩展为“完全自助”。
+
+### 迁移与交付：从设计延伸到落地
 
 ```text
-Maintained quality bar by doing X; kept Y metric at/above/below Z across N releases.
+平稳迁移：对新旧读取链路双跑比对，配套差异告警与分批切换，完成十余个业务模块迁移，迁移期间未发生由本次切换引起的生产事故。
 ```
 
-## Baseline Rule
+只有确实写入两套链路才写“双写”。零事故需要范围与时间；没有证据时不扩大为平台长期零故障。
 
-所有变化型结果必须提供可比较的基线和终值。不要只写“提升至 B”“降低至 B”或“优化了 X%”；应写成“指标在同一统计口径下从 A 提升至 B”或“从 A 降低至 B”，并尽量补充统计周期、样本范围或比较对象，让面试官能判断变化的实际量级。
+## 指标口径与事实边界
+
+- 前后值可比较时，写“同一指标从 A 到 B”，核对单位、对象、周期与样本。只有已确认终值时写客观终值；只有已证实比例时写比例与口径，不反推未知数。
+- 定性结果可以写清可观察变化，例如发布有审批记录、异常能够回滚，不必为其编造百分比。
+- 分开日常与应急、不同子系统、不同发布类型。不能用应急最快时间概括日常效率，也不能把规划发布次数当作规则变更次数。
+- 区分接入规模、消费流量与交易吞吐；系统覆盖规模不等于候选人独立建设的规模。
+- 区分主导、参与、负责某模块和跨团队接口；协调人数不等于直属管理人数。业务共同结果可写“支撑”，不要归因于某个技术动作独立创造。
+- 区分已完成、目标与路线图。用户确认属于事实来源，不等于外部核验；删去正文限定语不产生新的实测证据，来源说明保留原范围。
+- 百分比与百分点不同：18% 到 24% 是增加 6 个百分点，相对增幅约 33.3%。只使用与来源口径一致的表达。
+
+生成或实质改写时，可在原有来源说明中维护：
 
 ```text
-转化率从18%提升至24%（提升6个百分点），覆盖当月12组A/B实验。
+最终表述 | 来源文件/位置或用户确认 | 范围与待核实项
 ```
 
-```text
-核心链路P99延迟从800ms降至180ms，统计口径为生产环境连续30天请求。
-```
+只记录重要主张和口径变化，不为每次标点修改新增日志。待确认占位符只留在草稿，正式投递稿改为已确认事实或省略未证实主张。
 
-百分比与百分点不得混用：从18%到24%是增加6个百分点，相对增幅约33.3%。只保留与用户原始数据及计算口径一致的表达。如果用户只提供终值或变化比例，先追问基线；无法确认时使用待确认占位符，或只陈述可以自证的终值和规模，不得声称未经证实的提升或降低。
+## 版本比较与诊断
 
-## Section Templates
+先确认两个文件的身份和实际内容。文件名较新不代表质量更好；Markdown 与同名 PDF 也不保证同步。PDF 需看实际页面，并检查文字提取是否有错序、缺字或字符映射问题。
 
-### Summary
+按以下维度给出带证据的判断，不默认打分：
 
-Use 2-3 lines. The first line should be the strongest universal signal.
+| 维度 | 判断问题 |
+| --- | --- |
+| 岗位匹配 | 前半页能否看出适合什么岗位及最强证据？ |
+| 技术判断 | 能否看见约束、选择和取舍，而非仅有技术名词？ |
+| 个人贡献 | 负责边界、决策与交付是否清楚？ |
+| 指标可信度 | 比较口径和归因是否一致，面试时能否解释？ |
+| 信息效率 | 是否合并重复、删去弱指标，并保留关键深度？ |
+| 阅读体验 | 字号、层级、项目间距及两页密度是否合理？ |
 
-```text
-Backend engineer with 5 years of high-traffic system experience; led order/payment services supporting 3M daily orders.
-Quality-oriented owner: introduced CI quality gates and raised unit test coverage from 42% to 86% across 12 services.
-Seeking to build reliable commerce infrastructure in a team that values engineering depth and product impact.
-```
+输出先推荐适合目标岗位的主版本，用具体条目解释理由，再指出旧版值得保留的优点及少量优先修改项。不同版本的指标范围变化应单独指出，不把数字更大或表述更细当作已核实的事实。
 
-### Experience
+## 排版与 ATS
 
-```text
-Company | Role | Dates
-- Scope/result bullet.
-- Technical or business challenge bullet.
-- Ownership/collaboration bullet.
-- Recognition/learning/quality bullet if strong.
-```
-
-### Project
-
-```text
-Project Name
-Background: one short line on why the project mattered.
-Scale: users, QPS, data volume, revenue, team size, duration, or operational scope.
-Challenge: hardest technical/product/coordination constraint.
-Ownership: what the candidate personally decided, built, led, or improved.
-Result: measurable impact and current status.
-```
-
-## Weak To Strong Examples
-
-Weak:
-
-```text
-参与用户增长项目，负责数据分析和活动策划。
-```
-
-Strong:
-
-```text
-负责新客转化实验分析，3周内完成12组A/B实验，推动注册转化率从18%提升至24%。
-```
-
-Weak:
-
-```text
-熟悉微服务架构，参与系统优化。
-```
-
-Strong:
-
-```text
-重构订单服务拆分边界，将核心链路P99延迟从800ms降至180ms，并支撑日均300万订单。
-```
-
-Weak:
-
-```text
-沟通能力强，具备团队协作精神。
-```
-
-Strong:
-
-```text
-作为技术接口人对接产品、运营、销售3类角色，将复杂风控规则拆解为可执行配置，使跨部门平均确认周期从5个工作日缩短至3个工作日。
-```
-
-Weak:
-
-```text
-爱好写作、跑步、足球。
-```
-
-Strong:
-
-```text
-技术写作博客坚持周更3年，单篇最高8万+阅读；每周3次5公里跑步，坚持7年。
-```
-
-## Quantification Prompts
-
-If the user lacks numbers, ask about or suggest relevant categories:
-
-- How many users, customers, merchants, requests, files, records, devices, regions, or teams?
-- Before/after values under the same definition: latency, conversion, cost, failure rate, manual time, delivery cycle, coverage, accuracy. For every change claim, collect baseline A, outcome B, measurement period, and sample scope.
-- Ranking/rarity: top X%, only N people, first project, largest account, highest priority.
-- Time: built in N weeks, saved N hours/week, supported N releases, maintained for N months.
-- Team: managed N people, coordinated N stakeholders, hired N people, mentored N promotions.
-
-If exact numbers are unavailable, use ranges or scale language only when the user can substantiate them:
-
-```text
-千万级数据
-百人级内部用户
-多个核心业务方
-从小时级缩短到分钟级
-```
-
-## Review Rubric
-
-Score each resume from 1-5:
-
-- Clarity: can a reader understand the strongest value in 30 seconds?
-- Relevance: does the content match the target role/JD?
-- Evidence: are claims backed by numbers, scope, or concrete examples?
-- Baseline integrity: does every increase/decrease claim show comparable before-and-after values without confusing percentages and percentage points?
-- Ownership: is the candidate's personal contribution clear?
-- Differentiation: does it show why this candidate is not generic?
-- Defensibility: can every strong bullet survive interview challenge?
-- Brevity: is weak or repetitive content removed?
-- Scanability: is it visually easy to read?
-
-High-impact fixes usually follow this order:
-
-1. Reorder sections so the strongest evidence appears first.
-2. Rewrite summary into decision points.
-3. Quantify top projects.
-4. Clarify personal ownership.
-5. Delete unsupported adjectives and filler skills.
-6. Improve bullet length and formatting.
-
-## ATS Compatibility
-
-- Prefer a simple reading order, standard section names, selectable text, and conventional date formatting.
-- Keep essential contact information and section content out of decorative images, headers, and footers that an ATS may ignore.
-- Use JD terminology only when it accurately describes the candidate's experience; do not keyword-stuff or hide keywords.
-- When producing PDF, confirm that copied text follows the intended reading order.
-
-## Cautions
-
-- Do not fabricate metrics, titles, awards, school quality, or ownership.
-- Do not encourage discriminatory or legally risky personal disclosures. Treat age, marital status, fertility, health, ethnicity, and politics as sensitive; include only when the user explicitly requests and understands the tradeoff.
-- Do not overfit ATS keywords at the cost of human credibility.
-- Do not make every bullet sound like a world-changing achievement; believable precision is better than inflated grandeur.
+- 保留用户已经接受的页数、章节顺序和视觉偏好，局部改词不重排全稿。
+- 标题加重、项目间有间距，标题不孤立在页尾；不要第一页塞满、第二页大半空白，也不为填满末页添加弱内容。
+- 优先处理重复文案、间距和分页，再考虑字号；不靠缩小到难读来压页数。正文中的关键动作或结果适量加粗，避免整条加粗。
+- 姓名、联系方式、岗位与核心内容应位于正文中，不能只放在页眉页脚或图片里。章节标题与正文的提取顺序应一致。
+- JD 关键词必须符合真实经历，不隐藏或堆砌关键词。
+- 生成文件遵循 SKILL.md 的相应流水线；自动检查不能替代逐页视觉检查，也不能证明履历事实。
